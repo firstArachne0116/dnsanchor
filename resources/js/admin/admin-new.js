@@ -1,7 +1,6 @@
 import './bootstrap';
 
 import 'vue-multiselect/dist/vue-multiselect.min.css';
-import 'vue2-timepicker/dist/VueTimepicker.css'
 //import jQuery from 'jquery';
 //import tinymce from 'tinymce/tinymce';
 //import 'tinymce/themes/silver';
