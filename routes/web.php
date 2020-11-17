@@ -288,6 +288,7 @@ Route::middleware( [ 'auth:' . config( 'admin-auth.defaults.guard' ), 'admin' ] 
 
 /* Auto-generated admin routes */
 Route::middleware( [ 'auth:' . config( 'admin-auth.defaults.guard' ), 'admin' ] )->group( function () {
+    Route::get( '/admin/timesheet', 'Admin\TimesheetsController@index' );
     Route::get( '/admin/timesheets', 'Admin\TimesheetsController@index' );
     Route::get( '/admin/timesheets/create', 'Admin\TimesheetsController@create' );
     Route::post( '/admin/timesheets', 'Admin\TimesheetsController@store' );

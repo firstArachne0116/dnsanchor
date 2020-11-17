@@ -15,14 +15,14 @@
         <div class="mt-4" v-if="activeFilters.length > 0">
             <hr>
             <h5 class="kt-heading kt-heading--sm kt-heading--space-sm mt-5 mb-4">Active Filters ({{ activeFilters.length }} applied)</h5>
-            <div @mouseover="mouseover = index" @mouseleave="mouseover = null" class="form-group" v-for="(filter, index) in activeFilters">
+            <div @mouseover="mouseover = index" @mouseleave="mouseover = null" class="form-group" v-for="(filter, index) in activeFilters" :key="'fg' + index">
                 <div class="d-flex justify-content-between">
                     <label>{{ filter.label }}</label>
                     <a href="#" @click.prevent="removeFilter(filter, index)" v-if="mouseover === index">Remove</a>
                 </div>
 <!--                 <multiselect v-model="activeFilters[index].selectedOption" :options="activeFilters[index].options" :multiple="false" :close-on-select="true" :preselect-first="true"></multiselect>-->
                 <select class="form-control" v-model="activeFilters[index].selectedOption">
-                    <option v-for="option in activeFilters[ index ].options">
+                    <option v-for="(option, index) in activeFilters[ index ].options" :key="'fc' + index">
                         {{ option }}
                     </option>
                 </select>
@@ -30,7 +30,7 @@
 
                 <div v-if="activeFilters[index].type === 'dropdown'">
                     <select class="form-control" v-model="activeFilters[index].selectedValue">
-                        <option :value="value.name" v-for="value in activeFilters[index].values">
+                        <option :value="value.name" v-for="(value, index) in activeFilters[index].values" :key="'dr' + index">
                             {{ value.label }}
                         </option>
                     </select>

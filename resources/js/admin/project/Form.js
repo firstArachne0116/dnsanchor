@@ -52,7 +52,7 @@ Vue.component( 'project-form', {
                 origination: 'CTO',
                 types: {},
                 type: [],
-                title: 'Untitled Project',
+                title: '',
                 lines: {
                     current_page: 1,
                     data: [],
@@ -78,7 +78,16 @@ Vue.component( 'project-form', {
                     from: null,
                     per_page: 10,
                     total: 0
-                }
+                },
+                finishing_information: '',
+                packaging_information: '',
+                origination: '',
+                information_requests: '',
+                materials_in_at: '',
+                materials_in_at: '',
+                delivery_at: '',
+                ship_to: '',
+                vendor_notes: '',
             },
             misc_pos: [],
             is_viewing_files: false,
@@ -208,7 +217,7 @@ Vue.component( 'project-form', {
                     danger: true
                 }
             ],
-            current_tab: 'overview',
+            current_tab: 'rfq',
             onSuccessCallback: null,
             fabActions: [
                 {
@@ -247,7 +256,7 @@ Vue.component( 'project-form', {
             ran_after_init: false
         };
     },
-    props: ['types', 'access', 'awaitingManagerApproval', 'isManager', 'aaContent'],
+    props: ['types', 'access', 'awaitingManagerApproval', 'isManager', 'aaContent', 'customer_id'],
     created() {
         if ( window.moment ) {
             this.moment = window.moment;
@@ -276,45 +285,17 @@ Vue.component( 'project-form', {
 
         this.form.aa_content = this.aaContent;
 
-        console.log( 'tree' );
+        // if (parseInt(this.customer_id) !== -1) {
+        //     console.log(this.customer_id);
+        //     this.setTab('rfq');
+        // }
 
-        //        this.$refs.project_navigation.$on( 'update:activeTab', function ( activeTab ) {
-        //            _this3.activeTab = activeTab;
-        //
-        //            if ( activeTab === 8 || activeTab === 4 || activeTab === 9 || activeTab === 3 ) {
-        //                _this3.showMainForm = false;
-        //            }
-        //            else {
-        //                _this3.showMainForm = true;
-        //            }
-        //
-        //            switch ( activeTab ) {
-        //                case 0:
-        //                    _this3.templateType = 'RFQ';
-        //                    break;
-        //                case 1:
-        //                    _this3.templateType = 'PCQ';
-        //                    break;
-        //                case 2:
-        //                    _this3.templateType = 'FCQ';
-        //                    break;
-        //                case 3:
-        //                    _this3.templateType = 'JCP';
-        //                    break;
-        //                case 4:
-        //                    _this3.templateType = 'PO';
-        //                    break;
-        //                case 5:
-        //                    _this3.templateType = 'Misc PO';
-        //                    break;
-        //                case 6:
-        //                    _this3.templateType = 'AA';
-        //                    break;
-        //                case 7:
-        //                    _this3.templateType = 'JCW';
-        //                    break;
-        //            }
-        //        } );
+        if (this.$parent.is_viewing || this.$parent.is_editing) {
+            console.log('here');
+            this.setTab('overview');
+        }
+
+        console.log( 'tree' );
 
         let _this = this;
 
@@ -330,6 +311,13 @@ Vue.component( 'project-form', {
         ] ).then( axios.spread( ( salesResponse, clientResponse, orientationsResponse, vendorNotesResponse, remittanceResponse, paymentTermsResponse, vendorPaymentTermsResponse, vendorResponse ) => {
             _this.sales_people = salesResponse.data.data;
             _this.clients = clientResponse.data.data;
+
+            console.log(_this.customer_id);
+
+            if (parseInt(_this.customer_id) !== -1) {
+                _this.form.client = _this.clients.find(cl => cl.id === _this.customer_id);
+            }
+
             _this.orientations = orientationsResponse.data.data;
             _this.vendor_notes = vendorNotesResponse.data.data;
             _this.remittance_options = remittanceResponse.data.data;
@@ -342,7 +330,7 @@ Vue.component( 'project-form', {
 
                 this.$modal.show( 'pending-review' );
             } );
-        } ) );
+        }));
 
         jQuery( '[data-toggle="tooltip"]' ).tooltip();
     },

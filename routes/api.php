@@ -78,3 +78,9 @@ Route::patch( '/contacts/{contact}', function( \App\Http\Requests\Admin\Contact\
 
     return response()->json([ 'success' => $contact->update( $validated ) ] );
 });
+
+Route::get('/contacts/projects', 'Admin\ProjectsController@getListing1');
+
+Route::get('/timesheets/timesheet', 'Admin\TimesheetsController@timesheet');
+Route::post('/timesheets/payperiod', 'Admin\TimesheetsController@setPayPeriod');
+Route::post('/timesheets/update', 'Admin\TimesheetsController@updateRecord');

@@ -38,11 +38,17 @@
                 _this.setTab( 'resource-create' );
 
                 _this.active_record = _this.$attrs.edit;
+                _this.contact_id = this.active_record.id;
 
                 _this.is_editing = true;
                 _this.is_viewing = false;
                 _this.is_creating = false;
 
+                _this.fabActions1.push({
+                    name: 'new_rfq',
+                    icon: 'flaticon-add',
+                    tooltip: 'Generate New RFQ'
+                });
                 _this.$on( 'form-ready', payload => {
                     _this.$nextTick( () => {
                         _this.$refs.resource_create.setRecord( _this.$attrs.edit );
@@ -86,6 +92,35 @@
                         tooltip: 'Save & Exit'
                     },
                 ],
+                fabActions1: [
+                    {
+                        name: 'save',
+                        icon: 'flaticon-doc',
+                        tooltip: 'Save'
+                    },
+                    {
+                        name: 'print_cc',
+                        icon: 'flaticon2-printer',
+                        tooltip: 'Print CC'
+                    },
+                ],
+                fabActions2: [
+                    {
+                        name: 'save',
+                        icon: 'flaticon-doc',
+                        tooltip: 'Save'
+                    },
+                    {
+                        name: 'print_cc',
+                        icon: 'flaticon2-printer',
+                        tooltip: 'Print CC'
+                    },
+                    {
+                        name: 'new_rfq',
+                        icon: 'flaticon-add',
+                        tooltip: 'Generate New RFQ'
+                    }
+                ],
                 fabActionsViewingMode: [
                     {
                         name: 'edit',
@@ -126,7 +161,8 @@
 
                 if ( this.$refs.hasOwnProperty( 'resource_create' ) ) {
                     // don't do anything once saved
-                    this.onSubmit( () => {
+                    this.onSubmit( (data) => {
+                        console.log(data);
                         _this.$refs.resource_index.loadData();
 
                         _this.$refs.resource_create.$notify({
@@ -134,7 +170,15 @@
                             title: 'Success!',
                             text: 'This record has been successfully updated.',
                         });
-                    } );
+
+                        _this.is_viewing = false;
+                        _this.is_editing = true;
+                        _this.is_creating = false;
+
+                        if (data.redirect.includes('contacts')) {
+                            this.contact_id = data.id;
+                        }
+                    });
                 }
             },
 
@@ -177,6 +221,21 @@
                             text: 'This record has been successfully updated.',
                         } );
                     } );
+                }
+            },
+            fabActionPrintCC() {
+                window.print();
+            },
+
+            fabActionGenerateNewRFQ(id) {
+                if (!id) {
+                    alert(this.contact_id);
+                    if (this.contact_id) {
+                        // this.$router.push('/admin/projects/create?id=' + this.contact_id);
+                        window.location.href = '/admin/projects/create?id=' + this.contact_id;
+                    }
+                } else {
+                    window.location.href = '/admin/projects/create?id=' + id;
                 }
             },
 
@@ -229,7 +288,10 @@
             },
 
             editRecord( url ) {
+                // alert(url);
                 let _this = this;
+
+                _this.contact_id = parseInt(url.split('/')[url.split('/') - 1]);
 
                 axios.get( url ).then( response => {
                     _this.is_viewing = false;
@@ -382,6 +444,7 @@
                             title: 'Error!',
                             text: 'The form contains invalid fields.'
                         } );
+                        // console.log(result);
                         return false;
                     }
 

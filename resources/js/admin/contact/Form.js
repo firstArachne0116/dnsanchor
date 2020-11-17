@@ -29,15 +29,31 @@ Vue.component('contact-form', {
     mounted: function() {
         this.form.assigned_salesperson = [];
         this.form.referred_by = [];
+        if ( this.$attrs.hasOwnProperty( 'active_record' ) && this.$attrs.active_record ) {
+            this.active_record = this.$attrs.active_record;
+        }
 
         axios.all([
             axios.get( '/api/sales-persons' ),
-            axios.get( '/api/contacts' )
-        ]).then( axios.spread( ( salesResponse, contactResponse ) => {
+            axios.get( '/api/contacts' ),
+            axios.get( '/api/contacts/projects' )
+        ]).then( axios.spread( ( salesResponse, contactResponse, projectResponse ) => {
+            console.log(projectResponse.data.data);
             this.sales_people = salesResponse.data.data;
+            console.log('sales_people', this.sales_people);
             this.contacts = contactResponse.data.data;
+            this.projectResponse = projectResponse;
+
+            console.log(this.active_record);
+            if ( this.active_record && this.active_record.id ) {
+                this.projects = projectResponse.data.data.filter((item) => item.client_id === this.active_record.id);
+                console.log(this.projects);
+            } else {
+                this.projects = [];
+            }
 
             let form = this.form;
+
 
             if ( form.source ) {
                 // source options
@@ -75,7 +91,7 @@ Vue.component('contact-form', {
             if ( ! form.hasOwnProperty( 'social_media' ) || ! form.social_media ) {
                 this.form.social_media = {};
             }
-        } ) );
+        }));
     },
     data: function() {
         return {
@@ -102,6 +118,8 @@ Vue.component('contact-form', {
 
             sales_people: [],
             contacts: [],
+            projects: [],
+            projectResponse: null,
 
             source_options: [
                 { name: 'Trade Show', value: 'trade show' },
@@ -126,6 +144,9 @@ Vue.component('contact-form', {
         isCurrentTab(id) {
             return this.active_tab === id;
         },
-    },
 
+        viewProjectRecord(projectId) {
+            window.location.href = '/admin/projects/' + projectId + '/edit';
+        },
+    },
 });

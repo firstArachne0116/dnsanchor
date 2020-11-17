@@ -35,6 +35,7 @@ class Project extends Model implements HasMediaCollections, HasMediaConversions 
     protected $fillable = [
         'client_id',
         'sales_representative_id',
+        'csr',
         'contact_id',
         'title',
         'quantity',
@@ -79,6 +80,7 @@ class Project extends Model implements HasMediaCollections, HasMediaConversions 
     protected static $logAttributes = [
         'client_id',
         'sales_representative_id',
+        'csr',
         'contact_id',
         'title',
         'quantity',

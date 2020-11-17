@@ -22,19 +22,20 @@
 
 @section('body')
 
-                    @if ( isset( $active_record ) )
-                    <resource-listing-form-combination :edit="{{ json_encode( $active_record ) }}" inline-template>
-                    @else
-                    <resource-listing-form-combination {!! isset( $create ) && $create ? ':create="true"' : '' !!} inline-template>
-                    @endif
+@if ( isset( $active_record ) )
+    <resource-listing-form-combination :edit="{{ json_encode( $active_record ) }}" inline-template>
+@else
+    <resource-listing-form-combination {!! isset( $create ) && $create ? ':create="true"' : '' !!} inline-template>
+@endif
+
     <div>
         <div class="mt-4" v-cloak>
             <div v-show="isTabShowing( 'resource-index' )">
                 <project-listing
-                        ref="resource_index"
-                        :data="{{ $data->toJson() }}"
-                        :url="'{{ url('admin/projects') }}'"
-                        inline-template>
+                    ref="resource_index"
+                    :data="{{ $data->toJson() }}"
+                    :url="'{{ url('admin/projects') }}'"
+                    inline-template>
 
                     <div class="row">
                         <div class="col">
@@ -54,16 +55,16 @@
                                                     <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                                                         <input type="text" class="form-control" v-model="search" @keyup.enter="filter('search', $event.target.value)" placeholder="Search..." id="generalSearch">
                                                         <span class="kt-input-icon__icon kt-input-icon__icon--right">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                            <rect x="0" y="0" width="24" height="24"></rect>
-                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            </span>
+                                                            <span>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                                        <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                        <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </span>
+                                                        </span>
                                                     </div>
                                                 </form>
                                             </div>
@@ -100,13 +101,14 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="kt-datatable__body">
-                                                        <tr @click.prevent="$parent.viewRecord(item.resource_url)" style="height: 50px;" class="kt-datatable__row" v-for="(item, index) in collection">
+                                                        <tr @click.prevent="$parent.viewRecord(item.resource_url);" style="height: 50px;" class="kt-datatable__row" v-for="(item, index) in collection">
                                                             <td class="kt-datatable__cell">@{{ item.reference }}</td>
                                                             <td class="kt-datatable__cell">
                                                                 <svg v-if="item.status === 'AWAITING_MANAGER_APPROVAL'" data-toggle="tooltip" data-title="Pending Review" width="23" viewBox="0 0 48 48">
                                                                     <path fill="#FFC107" d="M40,40H8c-0.717,0-1.377-0.383-1.734-1.004c-0.356-0.621-0.354-1.385,0.007-2.004l16-28C22.631,8.378,23.289,8,24,8s1.369,0.378,1.728,0.992l16,28c0.361,0.619,0.363,1.383,0.007,2.004S40.716,40,40,40z" />
                                                                     <path fill="#5D4037" d="M22,34.142c0-0.269,0.047-0.515,0.143-0.746c0.094-0.228,0.229-0.426,0.403-0.592c0.171-0.168,0.382-0.299,0.624-0.393c0.244-0.092,0.518-0.141,0.824-0.141c0.306,0,0.582,0.049,0.828,0.141c0.25,0.094,0.461,0.225,0.632,0.393c0.175,0.166,0.31,0.364,0.403,0.592C25.953,33.627,26,33.873,26,34.142c0,0.27-0.047,0.516-0.143,0.74c-0.094,0.225-0.229,0.419-0.403,0.588c-0.171,0.166-0.382,0.296-0.632,0.392C24.576,35.954,24.3,36,23.994,36c-0.307,0-0.58-0.046-0.824-0.139c-0.242-0.096-0.453-0.226-0.624-0.392c-0.175-0.169-0.31-0.363-0.403-0.588C22.047,34.657,22,34.411,22,34.142 M25.48,30h-2.973l-0.421-12H25.9L25.48,30z" />
-                                                                </svg> @{{ item.title || '-' }}</td>
+                                                                </svg> @{{ item.title || '-' }}
+                                                            </td>
                                                             <td class="kt-datatable__cell">@{{ item.client_id || '-' }}</td>
                                                             <td class="kt-datatable__cell">@{{ item.hasOwnProperty( 'client' ) && item.client ? item.client.primary_contact_name : '-' }}</td>
                                                             <td class="kt-datatable__cell">@{{ item.hasOwnProperty( 'client' ) && item.client ? item.client.company_name : '-' }}</td>
@@ -114,11 +116,11 @@
 
                                                             <!--begin::Actions-->
                                                             <td class="kt-datatable__cell">
-                                                <span style="overflow: visible; position: relative; width: 80px;">
-                                                  <a class="mr-2" data-toggle="tooltip" title="View" @click.stop="$parent.viewRecord(item.resource_url)" href="#"><i class="flaticon2-checking"></i></a>
-                                                  <a class="mr-2" data-toggle="tooltip" title="Edit" @click.stop="$parent.editRecord(item.resource_url)" href="#"><i class="flaticon2-pen"></i></a>
-                                                  <a class="mr-2" data-toggle="tooltip" title="Delete" @click.stop="$parent.deleteRecord(item.resource_url)" href="#"><i class="flaticon2-rubbish-bin"></i></a>
-                                            </span>
+                                                            <span style="overflow: visible; position: relative; width: 80px;">
+                                                                <a class="mr-2" data-toggle="tooltip" title="View" @click.stop="$parent.viewRecord(item.resource_url)" href="#"><i class="flaticon2-checking"></i></a>
+                                                                <a class="mr-2" data-toggle="tooltip" title="Edit" @click.stop="$parent.editRecord(item.resource_url)" href="#"><i class="flaticon2-pen"></i></a>
+                                                                <a class="mr-2" data-toggle="tooltip" title="Delete" @click.stop="$parent.deleteRecord(item.resource_url)" href="#"><i class="flaticon2-rubbish-bin"></i></a>
+                                                            </span>
 
                                                             </td>
                                                             <!--end::Actions-->
@@ -149,10 +151,10 @@
                                                             </li>
 
                                                             <li v-if="showNext()" :class="{ 'disabled' : pagination.current_page === pagination.last_page || pagination.last_page === 0, 'page-item': true }">
-            <span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0" class="kt-datatable__pager-link kt-datatable__pager-link--next">
+                                                                <span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0" class="kt-datatable__pager-link kt-datatable__pager-link--next">
                                                                         <i class="flaticon2-next"></i>
 
-            </span>
+                                                                </span>
 
                                                                 <a href="#" v-if="pagination.current_page < pagination.last_page" :aria-label="config.ariaNext" @click.prevent="changePage(pagination.current_page + 1)" class="page-link">
                                                                     <span aria-hidden="true">@{{ config.nextText }}</span>
@@ -187,13 +189,13 @@
             <div v-if="isTabShowing( 'resource-create' )">
 
                 <fab
-                        v-if="!is_viewing"
-                        :actions="fabActions"
-                        bg-color="#4273FA"
-                        main-icon="apps"
-                        @save="fabActionSave"
-                        @save_new="fabActionSaveAndNew"
-                        @save_exit="fabActionSaveAndExit"
+                    v-if="!is_viewing"
+                    :actions="fabActions"
+                    bg-color="#4273FA"
+                    main-icon="apps"
+                    @save="fabActionSave"
+                    @save_new="fabActionSaveAndNew"
+                    @save_exit="fabActionSaveAndExit"
                 ></fab>
 
                 <div class="row">
@@ -201,7 +203,8 @@
                         <div class="kt-subheader w-100 m-0 p-0 kt-grid__item mb-3" id="kt_subheader">
                             <div class="kt-subheader__main">
                                 <button @click.prevent="setTab( 'resource-index' )" type="button" class="btn btn-sm btn-upper" style="background: #edeff6">
-                                    <i class="flaticon2-left-arrow-1 mr-0 pr-0"></i></button>
+                                    <i class="flaticon2-left-arrow-1 mr-0 pr-0"></i>
+                                </button>
 
                                 <h3 class="ml-3 kt-subheader__title">
                                     Back to projects
@@ -214,12 +217,13 @@
                 <div class="row">
                     <div class="col mt-0">
                         <project-form
-                                ref="resource_create"
-                                :action="'{{ url( 'admin/projects' ) }}'"
-                                aa-content="{{ $aa_content }}"
-                                :types="{{ json_encode( $project_types ) }}"
-                                :is-manager="{{ request()->user()->hasRole( 'Manager' ) ? 'true' : 'false' }}"
-                                inline-template>
+                            ref="resource_create"
+                            :action="'{{ url( 'admin/projects' ) }}'"
+                            aa-content="{{ $aa_content }}"
+                            :types="{{ json_encode( $project_types ) }}"
+                            :is-manager="{{ request()->user()->hasRole( 'Manager' ) ? 'true' : 'false' }}"
+                            :customer_id="{{ isset($customer_id) ? $customer_id : -1}}"
+                            inline-template>
 
                             <div>
 
@@ -268,12 +272,12 @@
                                             <div class="kt-portlet__head-toolbar">
                                                 <ul class="nav nav-tabs nav-tabs-space-lg nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand" role="tablist">
                                                     <li class="nav-item">
-                                                        <a @click="setTab('overview')" class="nav-link active" data-toggle="tab" href="#gpsd_overview" role="tab">
+                                                        <a @click="setTab('overview')" :class="'nav-link' + (($parent.is_viewing || $parent.is_editing) ? ' active' : '')" data-toggle="tab" href="#gpsd_overview" role="tab">
                                                             <i class="flaticon2-calendar-3"></i> Overview
                                                         </a>
                                                     </li>
                                                     <li class="nav-item">
-                                                        <a @click="setTab('rfq')" class="nav-link " data-toggle="tab" href="#gpsd_rfq" role="tab">
+                                                        <a @click="setTab('rfq')" :class="'nav-link' + ((!$parent.is_viewing && !$parent.is_editing) ? ' active' : '')" data-toggle="tab" href="#gpsd_rfq" role="tab">
                                                             <i v-if="!isPendingReview('RFQ')" class="flaticon2-notepad"></i>
                                                             <svg v-else data-toggle="tooltip" data-title="Pending Review" width="20" viewBox="0 0 48 48">
                                                                 <path fill="#FFC107" d="M40,40H8c-0.717,0-1.377-0.383-1.734-1.004c-0.356-0.621-0.354-1.385,0.007-2.004l16-28C22.631,8.378,23.289,8,24,8s1.369,0.378,1.728,0.992l16,28c0.361,0.619,0.363,1.383,0.007,2.004S40.716,40,40,40z" />
@@ -353,13 +357,13 @@
                                 </div>
 
                                 <fab
-                                        :actions="fabActions"
-                                        bg-color="#4273FA"
-                                        main-icon="apps"
-                                        @save_as_official="openModal('save-as-official')"
-                                        @print="openModal('print')"
-                                        @save="convenientSave"
-                                        @download="openModal('download')"
+                                    :actions="fabActions"
+                                    bg-color="#4273FA"
+                                    main-icon="apps"
+                                    @save_as_official="openModal('save-as-official')"
+                                    @print="openModal('print')"
+                                    @save="convenientSave"
+                                    @download="openModal('download')"
                                 ></fab>
 
                                 <modal v-cloak :min-height="500" height="auto" name="approve-version">

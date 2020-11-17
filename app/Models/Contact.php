@@ -76,7 +76,7 @@ class Contact extends Model
 
     public $timestamps = true;
 
-    protected $appends = ['resource_url', 'name', 'company_address_formatted'];
+    protected $appends = ['resource_url', 'company_address_formatted'];
 
     /* ************************ ACCESSOR ************************* */
 

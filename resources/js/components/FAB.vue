@@ -9,11 +9,12 @@
                     :leave-active-class="transitionLeave"
             >
                 <ul v-show="toggle" class="fab-list">
-                    <template v-for="action in actions">
+                    <template v-for="(action, index) in actions">
                         <transition
-                                enter-active-class="animated quick zoomIn"
-                                leave-active-class="animated quick zoomOut"
-                                v-on:after-enter="afterActionsTransitionEnter"
+                            enter-active-class="animated quick zoomIn"
+                            leave-active-class="animated quick zoomOut"
+                            v-on:after-enter="afterActionsTransitionEnter"
+                            :key="'tr_'+index"
                         >
                             <template v-if="action.tooltip">
                                 <li
@@ -521,25 +522,25 @@
             margin: 2vh 0;
         }
 
-        .fab-list li {
-            /*width: 40px;*/
-            /*height: 40px;*/
-            /*padding: .6rem;*/
+        /* .fab-list li {
+            width: 40px;
+            height: 40px;
+            padding: .6rem;
         }
 
         .fab-list li i {
-            /*font-size: 24px !important;*/
+            font-size: 24px !important;
         }
 
         .fab-main {
-            /*width: 55px;*/
-            /*height: 55px;*/
-            /*padding: 1.5rem;*/
+            width: 55px;
+            height: 55px;
+            padding: 1.5rem;
         }
 
         .fab-main i {
-            /*font-size: 34px !important;*/
-        }
+            font-size: 34px !important;
+        } */
 
     }
 </style>

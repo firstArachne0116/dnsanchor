@@ -40,6 +40,10 @@ class ProjectsController extends Controller {
         );
     }
 
+    public function getListing1( Request $request ) {
+        return $this->getListing($request);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -105,10 +109,17 @@ class ProjectsController extends Controller {
 
         $project_types = \App\Http\Resources\ProjectTypeResource::collection( \App\Models\ProjectType::all() )->toArray( $request );
 
+        $id = -1;
+
+        if ($request->has('id')) {
+            $id = $request->input('id');
+        }
+
         return view( 'admin.project.index', [
             'data'                  => $this->getListing( request() ),
             'project_types'         => $project_types,
             'create'                => true,
+            'customer_id'           => $id,
             'aa_content' => Template::where( 'key', 'aa-template' )->firstOrFail()->content,
             'blank_invoice_listing' => json_encode(
                 [
@@ -325,11 +336,11 @@ class ProjectsController extends Controller {
     }
 
     public function download_all_files( Request $request, Project $project ) {
-# enable output of HTTP headers
+        # enable output of HTTP headers
         $options = new \ZipStream\Option\Archive();
         $options->setSendHttpHeaders( true );
 
-# create a new zipstream object
+        # create a new zipstream object
         $zip = new \ZipStream\ZipStream( sprintf( '%s-All-Files.zip', $project->title ), $options );
 
         foreach ( $project->media as $media ) {
@@ -337,7 +348,7 @@ class ProjectsController extends Controller {
             $zip->addFileFromPath( $media->file_name, $media->getPath() );
         }
 
-# finish the zip stream
+        # finish the zip stream
         $zip->finish();
     }
 

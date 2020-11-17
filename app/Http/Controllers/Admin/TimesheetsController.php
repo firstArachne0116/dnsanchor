@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use App\Http\Requests\Admin\AdminUser\IndexAdminUser;
 use App\Http\Requests\Admin\Timesheet\IndexTimesheet;
 use App\Http\Requests\Admin\Timesheet\StoreTimesheet;
 use App\Http\Requests\Admin\Timesheet\UpdateTimesheet;
@@ -10,6 +11,9 @@ use App\Http\Requests\Admin\Timesheet\DestroyTimesheet;
 use Brackets\AdminListing\Facades\AdminListing;
 use App\Models\Timesheet;
 use Illuminate\Support\Facades\DB;
+use App\Models\AdminUser;
+use Illuminate\Support\Facades\Config;
+use Spatie\Permission\Models\Role;
 
 class TimesheetsController extends Controller
 {
@@ -20,30 +24,68 @@ class TimesheetsController extends Controller
      * @param  IndexTimesheet $request
      * @return Response|array
      */
-    public function index(IndexTimesheet $request)
+    protected $guard = 'admin';
+
+    public function __construct()
     {
-        // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(Timesheet::class)->processRequestAndGet(
-            // pass the request with params
+        // TODO add authorization
+        $this->guard = config('admin-auth.defaults.guard');
+    }
+
+
+    public function getListing($request) {
+        return AdminListing::create( AdminUser::class )->processRequestAndGet(
+        // pass the request with params
             $request,
 
             // set columns to query
-            [''],
+            [ 'id', 'first_name', 'last_name', 'email', 'activated', 'forbidden', 'language' ],
 
             // set columns to searchIn
-            ['']
+            [ 'id', 'first_name', 'last_name', 'email', 'language' ]
         );
-
-        if ($request->ajax()) {
-            if($request->has('bulk')){
-                return [
-                    'bulkItems' => $data->pluck('id')
-                ];
-            }
-            return ['data' => $data];
+    }
+    /**
+     * Get logged user before each method
+     *
+     * @param  Request $request
+     */
+    protected function setUser($request) {
+        if (empty($request->user($this->guard))) {
+            abort(404, 'Admin User not found');
         }
 
-        return view('admin.timesheet.index', ['data' => $data]);
+        $this->adminUser = $request->user($this->guard);
+    }
+
+    public function index(IndexAdminUser $request)
+    {
+        // create and AdminListing instance for a specific model and
+        $this->setUser($request);
+
+        $data = $this->getListing( $request );
+
+        $today = "" . date("Y-m-d");
+
+        $data = json_decode(json_encode($data));
+        foreach($data->data as $item) {
+            $item->status = false;
+            $record = TimeSheet::where('user_id', '=', $item->id)->where('date', '=', $today)->first();
+            if ($record && (($record->time_in_2 && !$record->time_out_2) || ($record->time_in_1 && !$record->time_out_1))) {
+                $item->status = true;
+            }
+        }
+
+        if ( $request->ajax() ) {
+            return [ 'data' => $data, 'activation' => Config::get( 'admin-auth.activation_enabled' ) ];
+        }
+
+        return view( 'admin.timesheet.index', [
+            'data'       => $data,
+            'activation' => Config::get( 'admin-auth.activation_enabled' ),
+            'roles' => Role::where( 'guard_name', $this->guard )->get(),
+            'userId' => $this->adminUser->id
+        ]);
     }
 
     /**
@@ -180,5 +222,57 @@ class TimesheetsController extends Controller
 
         return redirect()->back();
     }
-    
+
+    protected function getTimeSheetByUserId($userId)
+    {
+        $user = AdminUser::find($userId);
+        $pay_from = $user->pay_from;
+        $pay_to = $user->pay_to;
+
+        if (!$pay_from || !$pay_to) {
+            return ['pay_from' => $pay_from, 'pay_to' => $pay_to];
+        }
+
+        return ['pay_from' => $pay_from, 'pay_to' => $pay_to, 'timesheet' => TimeSheet::where('date', '>=', $pay_from)->where('date', '<=', $pay_to)->get()];
     }
+
+    public function timesheet(Request $request)
+    {
+        $userId = $request->input('userId');
+        return $this->getTimeSheetByUserId($userId);
+    }
+
+    public function setPayPeriod(Request $request)
+    {
+        $userId = $request->input('userId');
+        $user = AdminUser::find($userId);
+        $user->pay_from = $request->input('pay_from');
+        $user->pay_to = $request->input('pay_to');
+        $user->save();
+        return $this->getTimeSheetByUserId($userId);
+    }
+
+    public function updateRecord(Request $request)
+    {
+        $record = null;
+        if ($request->input('id')) {
+            $record = TimeSheet::find($request->input('id'));
+        }
+        else {
+            $record = new TimeSheet;
+        }
+        $record->time_in_1 = $request->input('time_in_1');
+        $record->time_out_1 = $request->input('time_out_1');
+        $record->time_in_2 = $request->input('time_in_2');
+        $record->time_out_2 = $request->input('time_out_2');
+        $record->regular_hrs = $request->input('regular_hrs');
+        $record->holiday_hrs = $request->input('holiday_hrs');
+        $record->overtime_hrs = $request->input('overtime_hrs');
+        $record->sick_hrs = $request->input('sick_hrs');
+        $record->vacation_hrs = $request->input('vacation_hrs');
+        $record->user_id = $request->input('user_id');
+        $record->date = $request->input('date');
+        $record->save();
+        return $record;
+    }
+}

@@ -4,12 +4,17 @@
 
 @section('body')
 
-                        @if ( isset( $active_record ) )
-                    <resource-listing-form-combination :edit="{{ json_encode( $active_record ) }}" inline-template>
-                    @else
-                    <resource-listing-form-combination {!! isset( $create ) && $create ? ':create="true"' : '' !!} inline-template>
-                    @endif
-        <div>
+@if ( isset( $active_record ) )
+    <resource-listing-form-combination :edit="{{ json_encode( $active_record ) }}" inline-template>
+@else
+    <resource-listing-form-combination {!! isset( $create ) && $create ? ':create="true"' : '' !!} inline-template>
+@endif
+
+<div class="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
+    @include( 'admin.layout.setting-sidebar' )
+
+    <div class="kt-grid__item kt-grid__item--fluid kt-app__content">
+        <div class="kt-container">
             <div class="row">
                 <div class="col">
                     <div class="kt-subheader w-100 m-0 p-0 kt-grid__item" id="kt_subheader">
@@ -65,16 +70,16 @@
                                                         <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                                                             <input type="text" class="form-control" v-model="search" @keyup.enter="filter('search', $event.target.value)" placeholder="Search..." id="generalSearch">
                                                             <span class="kt-input-icon__icon kt-input-icon__icon--right">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                            <rect x="0" y="0" width="24" height="24"></rect>
-                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-                                            </span>
+                                                                <span>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -104,10 +109,12 @@
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort"><span>Last Name</span></th>
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort"><span>Email</span></th>
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                    <span>Role</span></th>
+                                                                    <span>Role</span>
+                                                                </th>
 
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                    <span>Actions</span></th>
+                                                                    <span>Actions</span>
+                                                                </th>
                                                             </tr>
                                                         </thead>
                                                         <tbody class="kt-datatable__body">
@@ -130,24 +137,23 @@
                                                                 </td>
 
                                                                 <td class="kt-datatable__cell">
-                                                                    <span>@{{ item.main_role.name }}</span>
+                                                                    <span>@{{ item.main_role && item.main_role.name }}</span>
                                                                 </td>
 
                                                                 <!--begin::Actions-->
                                                                 <td class="kt-datatable__cell">
-                                                <span style="overflow: visible; position: relative; width: 80px;">
-                                                    <div class="dropdown">
-                                                          <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" admin-user="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <i class="flaticon-more-1"></i>
-                                                          </a>
+                                                                    <span style="overflow: visible; position: relative; width: 80px;">
+                                                                        <div class="dropdown">
+                                                                            <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" admin-user="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <i class="flaticon-more-1"></i>
+                                                                            </a>
 
-                                                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                            <a class="dropdown-item" @click.prevent="$parent.editRecord(item.resource_url)">Edit</a>
-                                                            <a class="dropdown-item" @click.prevent="$parent.deleteRecord(item.resource_url)" href="#">Delete</a>
-                                                          </div>
-                                                    </div>
-                                            </span>
-
+                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                                <a class="dropdown-item" @click.prevent="$parent.editRecord(item.resource_url)">Edit</a>
+                                                                                <a class="dropdown-item" @click.prevent="$parent.deleteRecord(item.resource_url)" href="#">Delete</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </span>
                                                                 </td>
                                                                 <!--end::Actions-->
                                                             </tr>
@@ -177,11 +183,10 @@
                                                                 </li>
 
                                                                 <li v-if="showNext()" :class="{ 'disabled' : pagination.current_page === pagination.last_page || pagination.last_page === 0, 'page-item': true }">
-            <span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0" class="kt-datatable__pager-link kt-datatable__pager-link--next">
+                                                                    <span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0" class="kt-datatable__pager-link kt-datatable__pager-link--next">
                                                                         <i class="flaticon2-next"></i>
 
-            </span>
-
+                                                                    </span>
                                                                     <a href="#" v-if="pagination.current_page < pagination.last_page" :aria-label="config.ariaNext" @click.prevent="changePage(pagination.current_page + 1)" class="page-link">
                                                                         <span aria-hidden="true">@{{ config.nextText }}</span>
                                                                     </a>
@@ -246,6 +251,8 @@
 
             </div>
         </div>
-    </resource-listing-form-combination>
+    </div>
+</div>
+</resource-listing-form-combination>
 
 @endsection

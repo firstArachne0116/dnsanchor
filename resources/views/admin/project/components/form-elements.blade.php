@@ -8,27 +8,29 @@
                     <ul class="kt-nav kt-nav--active-bg" id="kt_nav" role="tablist">
                         <li class="kt-nav__item">
                             <a href="#main-details" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                <span class="kt-nav__link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                            <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                            <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </span>
                                 <span class="kt-nav__link-text">Main Details</span>
                             </a>
                         </li>
                         <li class="kt-nav__item kt-nav__item--active">
                             <a class="kt-nav__link  dropdown-toggle" role="tab" id="kt_nav_link_1" data-toggle="collapse" href="#kt_nav_sub_1" aria-expanded=" false">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect x="0" y="0" width="24" height="24" />
-        <polygon fill="#000000" opacity="0.3" points="12 2 4 19 20 19" />
-        <rect fill="#000000" x="11" y="11" width="2" height="11" rx="1" />
-    </g>
-</svg>						</span>
+                                <span class="kt-nav__link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <polygon fill="#000000" opacity="0.3" points="12 2 4 19 20 19" />
+                                            <rect fill="#000000" x="11" y="11" width="2" height="11" rx="1" />
+                                        </g>
+                                    </svg>
+                                </span>
                                 <span class="kt-nav__link-text">Project Type(s)</span>
                             </a>
                             <ul class="kt-nav__sub collapse show" id="kt_nav_sub_1" role="tabpanel" aria-labelledby="m_nav_link_1" data-parent="#kt_nav">
@@ -42,28 +44,29 @@
                         </li>
                         <li class="kt-nav__item">
                             <a href="#other-information" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                <span class="kt-nav__link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                            <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                            <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </span>
                                 <span class="kt-nav__link-text">Other Information</span>
                             </a>
                         </li>
-
                         <li v-if="isCurrentTab(['pcq', 'fcq'])" class="kt-nav__item">
                             <a href="#pcq_information" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                <span class="kt-nav__link-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                            <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                            <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </span>
                                 <span class="kt-nav__link-text">PCQ Information</span>
                             </a>
                         </li>
@@ -71,71 +74,71 @@
                 </div>
                 <!--end::Section-->
 
-                {{--                                    <!--begin::Actions-->--}}
-                {{--                                    <div class="kt-subheader__toolbar">--}}
-                {{--                                        <div class="kt-subheader__wrapper">--}}
-                {{--                                            <a href="#" class="btn kt-subheader__btn-primary">--}}
-                {{--                                                Actions &nbsp;--}}
-                {{--                                                <!--<i class="flaticon2-calendar-1"></i>-->--}}
-                {{--                                            </a>--}}
+                <!--begin::Actions-->
+                    {{-- <div class="kt-subheader__toolbar">
+                        <div class="kt-subheader__wrapper">
+                            <a href="#" class="btn kt-subheader__btn-primary">
+                                Actions &nbsp;
+                                <!--<i class="flaticon2-calendar-1"></i>-->
+                            </a>
 
-                {{--                                            <div class="dropdown dropdown-inline" data-toggle="kt-tooltip" title="Quick actions" data-placement="left">--}}
-                {{--                                                <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-                {{--                                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">--}}
-                {{--                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">--}}
-                {{--                                                            <polygon points="0 0 24 0 24 24 0 24" />--}}
-                {{--                                                            <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />--}}
-                {{--                                                            <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />--}}
-                {{--                                                        </g>--}}
-                {{--                                                    </svg>                        <!--<i class="flaticon2-plus"></i>-->--}}
-                {{--                                                </a>--}}
-                {{--                                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">--}}
-                {{--                                                    <!--begin::Nav-->--}}
-                {{--                                                    <ul class="kt-nav">--}}
-                {{--                                                        <li class="kt-nav__head">--}}
-                {{--                                                            Add anything or jump to:--}}
-                {{--                                                            <i class="flaticon2-information" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more..."></i>--}}
-                {{--                                                        </li>--}}
-                {{--                                                        <li class="kt-nav__separator"></li>--}}
-                {{--                                                        <li class="kt-nav__item">--}}
-                {{--                                                            <a href="#" class="kt-nav__link">--}}
-                {{--                                                                <i class="kt-nav__link-icon flaticon2-drop"></i>--}}
-                {{--                                                                <span class="kt-nav__link-text">Order</span>--}}
-                {{--                                                            </a>--}}
-                {{--                                                        </li>--}}
-                {{--                                                        <li class="kt-nav__item">--}}
-                {{--                                                            <a href="#" class="kt-nav__link">--}}
-                {{--                                                                <i class="kt-nav__link-icon flaticon2-calendar-8"></i>--}}
-                {{--                                                                <span class="kt-nav__link-text">Ticket</span>--}}
-                {{--                                                            </a>--}}
-                {{--                                                        </li>--}}
-                {{--                                                        <li class="kt-nav__item">--}}
-                {{--                                                            <a href="#" class="kt-nav__link">--}}
-                {{--                                                                <i class="kt-nav__link-icon flaticon2-telegram-logo"></i>--}}
-                {{--                                                                <span class="kt-nav__link-text">Goal</span>--}}
-                {{--                                                            </a>--}}
-                {{--                                                        </li>--}}
-                {{--                                                        <li class="kt-nav__item">--}}
-                {{--                                                            <a href="#" class="kt-nav__link">--}}
-                {{--                                                                <i class="kt-nav__link-icon flaticon2-new-email"></i>--}}
-                {{--                                                                <span class="kt-nav__link-text">Support Case</span>--}}
-                {{--                                                                <span class="kt-nav__link-badge">--}}
-                {{--                                        <span class="kt-badge kt-badge--success">5</span>--}}
-                {{--                                    </span>--}}
-                {{--                                                            </a>--}}
-                {{--                                                        </li>--}}
-                {{--                                                        <li class="kt-nav__separator"></li>--}}
-                {{--                                                        <li class="kt-nav__foot">--}}
-                {{--                                                            <a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>--}}
-                {{--                                                            <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>--}}
-                {{--                                                        </li>--}}
-                {{--                                                    </ul>--}}
-                {{--                                                    <!--end::Nav-->--}}
-                {{--                                                </div>--}}
-                {{--                                            </div>--}}
-                {{--                                        </div>--}}
-                {{--                                    </div>--}}
-                {{--                                    <!--end::Actions-->--}}
+                            <div class="dropdown dropdown-inline" data-toggle="kt-tooltip" title="Quick actions" data-placement="left">
+                                <a href="#" class="btn btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon kt-svg-icon--success kt-svg-icon--md">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                            <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                            <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
+                                        </g>
+                                    </svg>                        <!--<i class="flaticon2-plus"></i>-->
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-fit dropdown-menu-md dropdown-menu-right">
+                                    <!--begin::Nav-->
+                                    <ul class="kt-nav">
+                                        <li class="kt-nav__head">
+                                            Add anything or jump to:
+                                            <i class="flaticon2-information" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more..."></i>
+                                        </li>
+                                        <li class="kt-nav__separator"></li>
+                                        <li class="kt-nav__item">
+                                            <a href="#" class="kt-nav__link">
+                                                <i class="kt-nav__link-icon flaticon2-drop"></i>
+                                                <span class="kt-nav__link-text">Order</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-nav__item">
+                                            <a href="#" class="kt-nav__link">
+                                                <i class="kt-nav__link-icon flaticon2-calendar-8"></i>
+                                                <span class="kt-nav__link-text">Ticket</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-nav__item">
+                                            <a href="#" class="kt-nav__link">
+                                                <i class="kt-nav__link-icon flaticon2-telegram-logo"></i>
+                                                <span class="kt-nav__link-text">Goal</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-nav__item">
+                                            <a href="#" class="kt-nav__link">
+                                                <i class="kt-nav__link-icon flaticon2-new-email"></i>
+                                                <span class="kt-nav__link-text">Support Case</span>
+                                                <span class="kt-nav__link-badge">
+                                                    <span class="kt-badge kt-badge--success">5</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-nav__separator"></li>
+                                        <li class="kt-nav__foot">
+                                            <a class="btn btn-label-brand btn-bold btn-sm" href="#">Upgrade plan</a>
+                                            <a class="btn btn-clean btn-bold btn-sm" href="#" data-toggle="kt-tooltip" data-placement="right" title="Click to learn more...">Learn more</a>
+                                        </li>
+                                    </ul>
+                                    <!--end::Nav-->
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                <!--end::Actions-->
             </div>
 
         </div>
@@ -206,11 +209,14 @@
 
                                     <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.client" id="ajax" label="primary_contact_name" track-by="id" placeholder="Type to search" open-direction="bottom" :options="clients" :multiple="false" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="false" :close-on-select="true" :options-limit="300" :limit-text="limitText" :max-height="600" :show-no-results="true" :hide-selected="false" @search-change="clientLookup">
                                         <template slot="tag" slot-scope="{ option, remove }">
-                                            <span class="custom__tag"><span>@{{ option.primary_contact_name }}</span><span class="custom__remove" @click="remove(option)">❌</span></span>
+                                            <span class="custom__tag">
+                                                <span>@{{ option.primary_contact_name }}</span>
+                                                <span class="custom__remove" @click="remove(option)">❌</span>
+                                            </span>
                                         </template>
-                                        <template slot="clear" slot-scope="props">
+                                        {{-- <template slot="clear" slot-scope="props">
                                             <div class="multiselect__clear" v-if="form.client.length" @mousedown.prevent.stop="clearAll(props.search)"></div>
-                                        </template>
+                                        </template> --}}
                                         <span slot="noResult">Oops! No elements found. Consider changing the search query.</span>
                                     </multiselect>
 
@@ -228,15 +234,26 @@
 
                                     <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.assigned_salesperson" :options="sales_people" :multiple="true" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Salesperson" label="name" track-by="name" :preselect-first="false">
                                         <template slot="selection" slot-scope="{ values, search, isOpen }">
-                    <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
-                        <span v-for="(person, index) in form.assigned_salesperson">
-                            <span>@{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
-                        </span>
-                    </span>
+                                            <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
+                                                <span v-for="(person, index) in form.assigned_salesperson">
+                                                    <span>@{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
+                                                </span>
+                                            </span>
                                         </template>
                                     </multiselect>
                                     <div v-if="errors.has('assigned_salesperson')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('assigned_salesperson') }}</div>
                                 </div>
+                            </div>
+
+
+                            <!-- CSR fields -->
+                            <div class="form-group col-6" :class="{'has-danger': errors.has('csr'), 'has-success': this.fields.csr && this.fields.csr.valid}">
+                                <label for="csr">
+                                    {{ trans('admin.project.columns.csr') }}
+                                </label>
+
+                                <input type="text" :readonly="awaitingManagerApproval && ! isManager" v-model="form.csr" class="form-control" :class="{'form-control-danger': errors.has('csr'), 'form-control-success': this.fields.csr && this.fields.csr.valid }" id="csr" name="csr" placeholder="{{ trans('admin.project.columns.csr') }}">
+                                <div v-if="errors.has('csr')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('csr') }}</div>
                             </div>
 
                             <!-- Singular fields -->
@@ -260,7 +277,7 @@
                             </div>
 
                             <!-- Trim Size -->
-                            <div class="form-group-last col-4" :class="{'has-danger': errors.has('trim_size'), 'has-success': this.fields.trim_size && this.fields.trim_size.valid}">
+                            <div class="form-group-last col-6" :class="{'has-danger': errors.has('trim_size'), 'has-success': this.fields.trim_size && this.fields.trim_size.valid}">
                                 <label for="trim_size">
                                     {{ trans('admin.project.columns.trim_size') }}
                                 </label>
@@ -270,7 +287,7 @@
                             </div>
 
                             <!-- Extent -->
-                            <div class="form-group-last col-4" :class="{'has-danger': errors.has('extent'), 'has-success': this.fields.extent && this.fields.extent.valid}">
+                            <div class="form-group-last col-6" :class="{'has-danger': errors.has('extent'), 'has-success': this.fields.extent && this.fields.extent.valid}">
                                 <label for="extent">
                                     {{ trans('admin.project.columns.extent') }}
                                 </label>
@@ -280,7 +297,7 @@
                             </div>
 
                             <!-- Orientation -->
-                            <div class="form-group-last col-4" :class="{'has-danger': errors.has('orientation'), 'has-success': this.fields.orientation && this.fields.orientation.valid}">
+                            <div class="form-group-last col-6" :class="{'has-danger': errors.has('orientation'), 'has-success': this.fields.orientation && this.fields.orientation.valid}">
                                 <label for="orientation">
                                     {{ trans('admin.project.columns.orientation') }}
                                 </label>
@@ -306,12 +323,12 @@
                         <div class="kt-portlet__head-toolbar">
                             <div class="kt-portlet__head-group">
                                 <a href="#">
-							<span class="kt-switch kt-switch--brand mt-3">
-							<label>
-							<input v-model="form.type" :value="type.friendly_name" type="checkbox" name="">
-							<span></span>
-							</label>
-							</span>
+                                    <span class="kt-switch kt-switch--brand mt-3">
+                                        <label>
+                                            <input v-model="form.type" :value="type.friendly_name" type="checkbox" name="">
+                                            <span></span>
+                                        </label>
+                                    </span>
                                 </a>
                                 {{--                                               <a href="#" data-ktportlet-tool="toggle" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-angle-down"></i></a>--}}
                                 {{--                                               <a href="#" data-ktportlet-tool="remove" class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-close"></i></a>--}}
@@ -575,22 +592,23 @@
                                                 </h3>
                                                 <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                                                 <div class="kt-subheader__group" id="kt_subheader_search">
-											<span class="kt-subheader__desc" id="kt_subheader_total">
-												@{{ pagination.state.total }} Total </span>
+                                                    <span class="kt-subheader__desc" id="kt_subheader_total">
+                                                        @{{ pagination.state.total }} Total
+                                                    </span>
                                                     <form class="kt-margin-l-20" id="kt_subheader_search_form">
                                                         <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                                                             <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
                                                             <span class="kt-input-icon__icon kt-input-icon__icon--right">
-														<span>
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24"></rect>
-																	<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-																	<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
-																</g>
-															</svg>
-														</span>
-													</span>
+                                                                <span>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -609,19 +627,19 @@
                                             </div>
                                         </div>
 
-                                        {{--                        <form @submit.prevent="">--}}
-                                        {{--                            <div class="row justify-content-md-between">--}}
-                                        {{--                                <div class="col col-lg-7 col-xl-5 form-group">--}}
-                                        {{--                                    <div class="input-group">--}}
-                                        {{--                                        <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />--}}
-                                        {{--                                        <span class="input-group-append">--}}
-                                        {{--                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>--}}
-                                        {{--                                        </span>--}}
-                                        {{--                                    </div>--}}
-                                        {{--                                </div>--}}
+                                        {{-- <form @submit.prevent="">
+                                            <div class="row justify-content-md-between">
+                                                <div class="col col-lg-7 col-xl-5 form-group">
+                                                    <div class="input-group">
+                                                        <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
+                                                        <span class="input-group-append">
+                                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
 
-                                        {{--                            </div>--}}
-                                        {{--                        </form>--}}
+                                            </div>
+                                        </form> --}}
 
                                         <div class="kt-portlet">
                                             <div class="kt-portlet__body kt-portlet__body--fit">
@@ -697,28 +715,28 @@
                                                                 <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
                                                                 <td class="kt-datatable__cell">@{{ item.category || 'Misc' }}</td>
                                                                 <td class="kt-datatable__cell">
-                                            <span style="overflow: visible; position: relative; width: 80px;">
-                                                <div class="dropdown">
-  <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="flaticon-more-1"></i>
-  </a>
+                                                                    <span style="overflow: visible; position: relative; width: 80px;">
+                                                                        <div class="dropdown">
+                                                                            <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                <i class="flaticon-more-1"></i>
+                                                                            </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
-    <a class="dropdown-item" href="#">View</a>
-    <a class="dropdown-item" href="#">View Progress</a>
-  </div>
-</div>
-                                            </span>
-                                                                    {{--                                            <div class="row no-gutters">--}}
-                                                                    {{--                                                <div class="col-auto">--}}
-                                                                    {{--                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>--}}
-                                                                    {{--                                                </div>--}}
-                                                                    {{--                                                <form class="col" @submit.prevent="deleteItem(item.resource_url)">--}}
-                                                                    {{--                                                    <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">--}}
-                                                                    {{--                                                        <i class="fa fa-trash-o"></i></button>--}}
-                                                                    {{--                                                </form>--}}
-                                                                    {{--                                            </div>--}}
+                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                                <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
+                                                                                <a class="dropdown-item" href="#">View</a>
+                                                                                <a class="dropdown-item" href="#">View Progress</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </span>
+                                                                    {{-- <div class="row no-gutters">
+                                                                        <div class="col-auto">
+                                                                            <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                                        </div>
+                                                                        <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                                                            <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">
+                                                                                <i class="fa fa-trash-o"></i></button>
+                                                                        </form>
+                                                                    </div> --}}
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -772,69 +790,68 @@
                                                             </tr>
                                                         </tfoot>
                                                     </table>
-                                                    {{--                                                                        <div class="kt-datatable__pager kt-datatable--paging-loaded">--}}
-                                                    {{--                                                                            <ul class="kt-datatable__pager-nav">--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li style=""></li>--}}
-                                                    {{--                                                                                <li style="display: none;">--}}
-                                                    {{--                                                                                    <input type="text" class="kt-pager-input form-control" title="Page number">--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li style=""></li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                                <li>--}}
-                                                    {{--                                                                                    <a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a>--}}
-                                                    {{--                                                                                </li>--}}
-                                                    {{--                                                                            </ul>--}}
-                                                    {{--                                                                            <div class="kt-datatable__pager-info">--}}
-                                                    {{--                                                                                <div class="dropdown bootstrap-select kt-datatable__pager-size dropup" style="width: 60px;">--}}
-                                                    {{--                                                                                    <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="10" tabindex="-98">--}}
-                                                    {{--                                                                                        <option selected value="10">10</option>--}}
-                                                    {{--                                                                                        <option value="20">20</option>--}}
-                                                    {{--                                                                                        <option value="30">30</option>--}}
-                                                    {{--                                                                                        <option value="50">50</option>--}}
-                                                    {{--                                                                                        <option value="100">100</option>--}}
-                                                    {{--                                                                                    </select></div>--}}
-                                                    {{--                                                                                <span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>--}}
-                                                    {{--                                                                            </div>--}}
-                                                    {{--                                                                        </div>--}}
-
+                                                    {{-- <div class="kt-datatable__pager kt-datatable--paging-loaded">
+                                                        <ul class="kt-datatable__pager-nav">
+                                                            <li>
+                                                                <a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a>
+                                                            </li>
+                                                            <li style=""></li>
+                                                            <li style="display: none;">
+                                                                <input type="text" class="kt-pager-input form-control" title="Page number">
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a>
+                                                            </li>
+                                                            <li style=""></li>
+                                                            <li>
+                                                                <a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="kt-datatable__pager-info">
+                                                            <div class="dropdown bootstrap-select kt-datatable__pager-size dropup" style="width: 60px;">
+                                                                <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="10" tabindex="-98">
+                                                                    <option selected value="10">10</option>
+                                                                    <option value="20">20</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                </select></div>
+                                                            <span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>
+                                                        </div>
+                                                    </div> --}}
                                                 </div>
 
-                                                {{--                                <div class="row" v-if="pagination.state.total > 0">--}}
-                                                {{--                                    <div class="col-sm">--}}
-                                                {{--                                        <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>--}}
-                                                {{--                                    </div>--}}
-                                                {{--                                    <div class="col-sm-auto">--}}
-                                                {{--                                        <pagination></pagination>--}}
-                                                {{--                                    </div>--}}
-                                                {{--                                </div>--}}
+                                                {{-- <div class="row" v-if="pagination.state.total > 0">
+                                                    <div class="col-sm">
+                                                        <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
+                                                    </div>
+                                                    <div class="col-sm-auto">
+                                                        <pagination></pagination>
+                                                    </div>
+                                                </div>
 
-                                                {{--                                <div class="no-items-found" v-if="!collection.length > 0">--}}
-                                                {{--                                    <i class="icon-magnifier"></i>--}}
-                                                {{--                                    <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>--}}
-                                                {{--                                    <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>--}}
-                                                {{--                                    <a class="btn btn-primary btn-spinner" href="{{ url('admin/projects/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}--}}
-                                                {{--                                    </a>--}}
-                                                {{--                                </div>--}}
+                                                <div class="no-items-found" v-if="!collection.length > 0">
+                                                    <i class="icon-magnifier"></i>
+                                                    <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
+                                                    <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
+                                                    <a class="btn btn-primary btn-spinner" href="{{ url('admin/projects/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}
+                                                    </a>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -1001,9 +1018,9 @@
             <div class="kt-portlet__body">
                 <div class="kt-widget kt-widget--user-profile-3">
                     <div class="kt-widget__top">
-                        {{--                            <div class="kt-widget__media kt-hidden-">--}}
-                        {{--                                <img src="assets/media/project-logos/3.png" alt="image">--}}
-                        {{--                            </div>--}}
+                        {{-- <div class="kt-widget__media kt-hidden-">
+                            <img src="assets/media/project-logos/3.png" alt="image">
+                        </div> --}}
                         <div class="kt-widget__content">
                             <div class="kt-widget__head">
 
@@ -1016,64 +1033,64 @@
                             <div class="kt-widget__info">
                                 <div class="kt-widget__desc">
                                     This project was created on
-                                    {{--                                    <span>{{ $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span><br>--}}
+                                    {{-- <span>{{ $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span><br> --}}
                                     by Jarrod Noonan. It has a total of 10 contributors.
                                 </div>
-                                <!--														<div class="kt-widget__progress kt-hidden">-->
-                                <!--															<div class="kt-widget__text">-->
-                                <!--																Progress-->
-                                <!--															</div>-->
-                                <!--															<div class="progress" style="height: 5px;width: 100%;">-->
-                                <!--																<div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                <!--															</div>-->
-                                <!--															<div class="kt-widget__stats">-->
-                                <!--																78%-->
-                                <!--															</div>-->
-                                <!--														</div>-->
+                                {{-- <div class="kt-widget__progress kt-hidden">
+                                    <div class="kt-widget__text">
+                                        Progress
+                                    </div>
+                                    <div class="progress" style="height: 5px;width: 100%;">
+                                        <div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="kt-widget__stats">
+                                        78%
+                                    </div>
+                                </div> --}}
                                 <div class="kt-widget__stats d-flex align-items-center flex-fill">
                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Created
-																</span>
+                                        <span class="kt-widget__date">
+                                            Created
+                                        </span>
                                         <div class="kt-widget__label">
-                                            {{--                                            <span class="btn btn-label-brand btn-sm btn-bold btn-upper">{{ $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span>--}}
+                                            {{-- <span class="btn btn-label-brand btn-sm btn-bold btn-upper">{{ $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span> --}}
                                         </div>
                                     </div>
                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Materials In
-																</span>
+                                        <span class="kt-widget__date">
+                                            Materials In
+                                        </span>
                                         <div class="kt-widget__label">
-                                            {{--                                            <span class="btn btn-label-danger btn-sm btn-bold btn-upper">{{ $project->materials_in_at ? $project->materials_in_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                            {{-- <span class="btn btn-label-danger btn-sm btn-bold btn-upper">{{ $project->materials_in_at ? $project->materials_in_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                         </div>
                                     </div>
                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	FOB
-																</span>
+                                        <span class="kt-widget__date">
+                                            FOB
+                                        </span>
                                         <div class="kt-widget__label">
-                                            {{--                                            <span class="btn btn-label-success btn-sm btn-bold btn-upper">{{ $project->fob_at ? $project->fob_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                            {{-- <span class="btn btn-label-success btn-sm btn-bold btn-upper">{{ $project->fob_at ? $project->fob_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                         </div>
                                     </div>
                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Delivery
-																</span>
+                                        <span class="kt-widget__date">
+                                            Delivery
+                                        </span>
                                         <div class="kt-widget__label">
-                                            {{--                                            <span class="btn btn-label-warning btn-sm btn-bold btn-upper">{{ $project->delivery_at ? $project->delivery_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                            {{-- <span class="btn btn-label-warning btn-sm btn-bold btn-upper">{{ $project->delivery_at ? $project->delivery_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                         </div>
                                     </div>
-                                    <!--															<div class="kt-widget__item flex-fill">-->
-                                    <!--																<span class="kt-widget__subtitel">Progress</span>-->
-                                    <!--																<div class="kt-widget__progress d-flex  align-items-center">-->
-                                    <!--																	<div class="progress" style="height: 5px;width: 100%;">-->
-                                    <!--																		<div class="progress-bar kt-bg-success" role="progressbar" style="width: 78%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                    <!--																	</div>-->
-                                    <!--																	<span class="kt-widget__stat">-->
-                                    <!--																		78%-->
-                                    <!--																	</span>-->
-                                    <!--																</div>-->
-                                    <!--															</div>-->
+                                    {{-- <div class="kt-widget__item flex-fill">
+                                        <span class="kt-widget__subtitel">Progress</span>
+                                        <div class="kt-widget__progress d-flex  align-items-center">
+                                            <div class="progress" style="height: 5px;width: 100%;">
+                                                <div class="progress-bar kt-bg-success" role="progressbar" style="width: 78%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <span class="kt-widget__stat">
+                                                78%
+                                            </span>
+                                        </div>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -1146,23 +1163,23 @@
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
-                    <!--													<ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-brand" role="tablist">-->
-                    <!--														<li class="nav-item">-->
-                    <!--															<a class="nav-link active" data-toggle="tab" href="#kt_widget2_tab1_content" role="tab">-->
-                    <!--																Today-->
-                    <!--															</a>-->
-                    <!--														</li>-->
-                    <!--														<li class="nav-item">-->
-                    <!--															<a class="nav-link" data-toggle="tab" href="#kt_widget2_tab2_content" role="tab">-->
-                    <!--																Week-->
-                    <!--															</a>-->
-                    <!--														</li>-->
-                    <!--														<li class="nav-item">-->
-                    <!--															<a class="nav-link" data-toggle="tab" href="#kt_widget2_tab3_content" role="tab">-->
-                    <!--																Month-->
-                    <!--															</a>-->
-                    <!--														</li>-->
-                    <!--													</ul>-->
+                    {{-- <ul class="nav nav-tabs nav-tabs-line nav-tabs-bold nav-tabs-line-brand" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#kt_widget2_tab1_content" role="tab">
+                                Today
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#kt_widget2_tab2_content" role="tab">
+                                Week
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#kt_widget2_tab3_content" role="tab">
+                                Month
+                            </a>
+                        </li>
+                    </ul> --}}
                 </div>
             </div>
             <div class="kt-portlet__body">
@@ -2030,11 +2047,11 @@
 
                                 <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.assigned_salesperson" :options="sales_people" :multiple="true" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Salesperson" label="name" track-by="name" :preselect-first="false">
                                     <template slot="selection" slot-scope="{ values, search, isOpen }">
-                    <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
-                        <span v-for="(person, index) in form.assigned_salesperson">
-                            <span>@{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
-                        </span>
-                    </span>
+                                        <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
+                                            <span v-for="(person, index) in form.assigned_salesperson">
+                                                <span>@{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
+                                            </span>
+                                        </span>
                                     </template>
                                 </multiselect>
                                 <div v-if="errors.has('assigned_salesperson')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('assigned_salesperson') }}</div>
@@ -2084,8 +2101,9 @@
                     </h3>
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                     <div class="kt-subheader__group" id="kt_subheader_search">
-											<span class="kt-subheader__desc" id="kt_subheader_total">
-												@{{ category.length }} Total </span>
+                        <span class="kt-subheader__desc" id="kt_subheader_total">
+                            @{{ category.length }} Total
+                        </span>
                     </div>
 
                 </div>
@@ -2123,19 +2141,19 @@
                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
                                     <td class="kt-datatable__cell">
-                                            <span style="overflow: visible; position: relative; width: 80px;">
-                                                <div class="dropdown">
-  <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="flaticon-more-1"></i>
-  </a>
+                                        <span style="overflow: visible; position: relative; width: 80px;">
+                                            <div class="dropdown">
+                                                <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="flaticon-more-1"></i>
+                                                </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
-    <a class="dropdown-item" href="#">View</a>
-    <a class="dropdown-item" href="#">View Progress</a>
-  </div>
-</div>
-                                            </span>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
+                                                    <a class="dropdown-item" href="#">View</a>
+                                                    <a class="dropdown-item" href="#">View Progress</a>
+                                                </div>
+                                            </div>
+                                        </span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -2146,7 +2164,8 @@
                                         <span>Name</span>
                                     </td>
                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
-                                        <span>Description</span></td>
+                                        <span>Description</span>
+                                    </td>
                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
                                         <span>Quantity</span>
                                     </td>
@@ -2154,9 +2173,11 @@
                                         <span>Unit Cost</span>
                                     </td>
                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
-                                        <span>Unit Price</span></td>
+                                        <span>Unit Price</span>
+                                    </td>
                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
-                                        <span>Actions</span></td>
+                                        <span>Actions</span>
+                                    </td>
                                 </tr>
                             </tfoot>
                         </table>
@@ -2185,10 +2206,10 @@
             <div class="kt-portlet__body">
                 <div class="kt-portlet__content">
                     <vue-mce :config="config" v-model="aa_content" ref="AAEditor" />
-                    {{--                    <quill-editor--}}
-                    {{--                            v-model="aa_content"--}}
-                    {{--                            ref="AAEditor"--}}
-                    {{--                            :options="{}"></quill-editor>--}}
+                    {{-- <quill-editor
+                        v-model="aa_content"
+                        ref="AAEditor"
+                        :options="{}"></quill-editor> --}}
                 </div>
             </div>
         </div>
@@ -2215,22 +2236,23 @@
                                     </h3>
                                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                                     <div class="kt-subheader__group" id="kt_subheader_search">
-											<span class="kt-subheader__desc" id="kt_subheader_total">
-												@{{ pagination.state.total }} Total </span>
+                                        <span class="kt-subheader__desc" id="kt_subheader_total">
+                                            @{{ pagination.state.total }} Total
+                                        </span>
                                         <form class="kt-margin-l-20" id="kt_subheader_search_form">
                                             <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                                                 <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
                                                 <span class="kt-input-icon__icon kt-input-icon__icon--right">
-														<span>
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24"></rect>
-																	<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-																	<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
-																</g>
-															</svg>
-														</span>
-													</span>
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                                <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </span>
+                                                </span>
                                             </div>
                                         </form>
                                     </div>
@@ -2249,19 +2271,19 @@
                                 </div>
                             </div>
 
-                            {{--                        <form @submit.prevent="">--}}
-                            {{--                            <div class="row justify-content-md-between">--}}
-                            {{--                                <div class="col col-lg-7 col-xl-5 form-group">--}}
-                            {{--                                    <div class="input-group">--}}
-                            {{--                                        <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />--}}
-                            {{--                                        <span class="input-group-append">--}}
-                            {{--                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>--}}
-                            {{--                                        </span>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
+                            {{-- <form @submit.prevent="">
+                                <div class="row justify-content-md-between">
+                                    <div class="col col-lg-7 col-xl-5 form-group">
+                                        <div class="input-group">
+                                            <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
+                                            <span class="input-group-append">
+                                                <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>
+                                            </span>
+                                        </div>
+                                    </div>
 
-                            {{--                            </div>--}}
-                            {{--                        </form>--}}
+                                </div>
+                            </form> --}}
 
                             <div class="kt-portlet">
                                 <div class="kt-portlet__body kt-portlet__body--fit">
@@ -2323,28 +2345,28 @@
                                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
                                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
                                                     <td class="kt-datatable__cell">
-                                            <span style="overflow: visible; position: relative; width: 80px;">
-                                                <div class="dropdown">
-  <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="flaticon-more-1"></i>
-  </a>
+                                                        <span style="overflow: visible; position: relative; width: 80px;">
+                                                            <div class="dropdown">
+                                                                <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="flaticon-more-1"></i>
+                                                                </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
-    <a class="dropdown-item" href="#">View</a>
-    <a class="dropdown-item" href="#">View Progress</a>
-  </div>
-</div>
-                                            </span>
-                                                        {{--                                            <div class="row no-gutters">--}}
-                                                        {{--                                                <div class="col-auto">--}}
-                                                        {{--                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>--}}
-                                                        {{--                                                </div>--}}
-                                                        {{--                                                <form class="col" @submit.prevent="deleteItem(item.resource_url)">--}}
-                                                        {{--                                                    <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">--}}
-                                                        {{--                                                        <i class="fa fa-trash-o"></i></button>--}}
-                                                        {{--                                                </form>--}}
-                                                        {{--                                            </div>--}}
+                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
+                                                                    <a class="dropdown-item" href="#">View</a>
+                                                                    <a class="dropdown-item" href="#">View Progress</a>
+                                                                </div>
+                                                            </div>
+                                                        </span>
+                                                        {{-- <div class="row no-gutters">
+                                                            <div class="col-auto">
+                                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                            </div>
+                                                            <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                                                <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">
+                                                                    <i class="fa fa-trash-o"></i></button>
+                                                            </form>
+                                                        </div> --}}
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -2396,69 +2418,69 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        {{--                                                                        <div class="kt-datatable__pager kt-datatable--paging-loaded">--}}
-                                        {{--                                                                            <ul class="kt-datatable__pager-nav">--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li style=""></li>--}}
-                                        {{--                                                                                <li style="display: none;">--}}
-                                        {{--                                                                                    <input type="text" class="kt-pager-input form-control" title="Page number">--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li style=""></li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                                <li>--}}
-                                        {{--                                                                                    <a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a>--}}
-                                        {{--                                                                                </li>--}}
-                                        {{--                                                                            </ul>--}}
-                                        {{--                                                                            <div class="kt-datatable__pager-info">--}}
-                                        {{--                                                                                <div class="dropdown bootstrap-select kt-datatable__pager-size dropup" style="width: 60px;">--}}
-                                        {{--                                                                                    <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="10" tabindex="-98">--}}
-                                        {{--                                                                                        <option selected value="10">10</option>--}}
-                                        {{--                                                                                        <option value="20">20</option>--}}
-                                        {{--                                                                                        <option value="30">30</option>--}}
-                                        {{--                                                                                        <option value="50">50</option>--}}
-                                        {{--                                                                                        <option value="100">100</option>--}}
-                                        {{--                                                                                    </select></div>--}}
-                                        {{--                                                                                <span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>--}}
-                                        {{--                                                                            </div>--}}
-                                        {{--                                                                        </div>--}}
+                                        {{-- <div class="kt-datatable__pager kt-datatable--paging-loaded">
+                                            <ul class="kt-datatable__pager-nav">
+                                                <li>
+                                                    <a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a>
+                                                </li>
+                                                <li style=""></li>
+                                                <li style="display: none;">
+                                                    <input type="text" class="kt-pager-input form-control" title="Page number">
+                                                </li>
+                                                <li>
+                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a>
+                                                </li>
+                                                <li>
+                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a>
+                                                </li>
+                                                <li>
+                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a>
+                                                </li>
+                                                <li>
+                                                    <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a>
+                                                </li>
+                                                <li style=""></li>
+                                                <li>
+                                                    <a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a>
+                                                </li>
+                                            </ul>
+                                            <div class="kt-datatable__pager-info">
+                                                <div class="dropdown bootstrap-select kt-datatable__pager-size dropup" style="width: 60px;">
+                                                    <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="10" tabindex="-98">
+                                                        <option selected value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="30">30</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select></div>
+                                                <span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>
+                                            </div>
+                                        </div> --}}
 
                                     </div>
 
-                                    {{--                                <div class="row" v-if="pagination.state.total > 0">--}}
-                                    {{--                                    <div class="col-sm">--}}
-                                    {{--                                        <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>--}}
-                                    {{--                                    </div>--}}
-                                    {{--                                    <div class="col-sm-auto">--}}
-                                    {{--                                        <pagination></pagination>--}}
-                                    {{--                                    </div>--}}
-                                    {{--                                </div>--}}
+                                    {{-- <div class="row" v-if="pagination.state.total > 0">
+                                        <div class="col-sm">
+                                            <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
+                                        </div>
+                                        <div class="col-sm-auto">
+                                            <pagination></pagination>
+                                        </div>
+                                    </div> --}}
 
-                                    {{--                                <div class="no-items-found" v-if="!collection.length > 0">--}}
-                                    {{--                                    <i class="icon-magnifier"></i>--}}
-                                    {{--                                    <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>--}}
-                                    {{--                                    <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>--}}
-                                    {{--                                    <a class="btn btn-primary btn-spinner" href="{{ url('admin/projects/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}--}}
-                                    {{--                                    </a>--}}
-                                    {{--                                </div>--}}
+                                    {{-- <div class="no-items-found" v-if="!collection.length > 0">
+                                        <i class="icon-magnifier"></i>
+                                        <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
+                                        <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
+                                        <a class="btn btn-primary btn-spinner" href="{{ url('admin/projects/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}
+                                        </a>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -2492,33 +2514,33 @@
                                     <div class="kt-widget__info">
                                         <div class="kt-widget__desc">
                                             This project was created on
-                                            {{--                                            <span>{{  $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span><br>--}}
+                                            {{-- <span>{{  $project->created_at ? $project->created_at->format( 'jS \o\f F, Y' ) : 'N/A' }}</span><br> --}}
                                             by Jarrod Noonan. It has a total of 10 contributors.
                                         </div>
-                                        <!--														<div class="kt-widget__progress kt-hidden">-->
-                                        <!--															<div class="kt-widget__text">-->
-                                        <!--																Progress-->
-                                        <!--															</div>-->
-                                        <!--															<div class="progress" style="height: 5px;width: 100%;">-->
-                                        <!--																<div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                        <!--															</div>-->
-                                        <!--															<div class="kt-widget__stats">-->
-                                        <!--																78%-->
-                                        <!--															</div>-->
-                                        <!--														</div>-->
+                                        {{-- <div class="kt-widget__progress kt-hidden">
+                                            <div class="kt-widget__text">
+                                                Progress
+                                            </div>
+                                            <div class="progress" style="height: 5px;width: 100%;">
+                                                <div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="6aria-valuemin="0" aria-valuemax="100"></div>-->
+                                            </div>
+                                            <div class="kt-widget__stats">
+                                                78%
+                                            </div>
+                                        </div> --}}
                                         <div class="kt-widget__stats d-flex align-items-center flex-fill">
                                             <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Created At
-																</span>
+                                                <span class="kt-widget__date">
+                                                    Created At
+                                                </span>
                                                 <div class="kt-widget__label">
                                                     <span class="btn btn-label-brand btn-sm btn-bold btn-upper">07 may, 18</span>
                                                 </div>
                                             </div>
                                             <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Last Updated At
-																</span>
+                                                <span class="kt-widget__date">
+                                                    Last Updated At
+                                                </span>
                                                 <div class="kt-widget__label">
                                                     <span class="btn btn-label-danger btn-sm btn-bold btn-upper">07 0ct, 18</span>
                                                 </div>
@@ -2604,7 +2626,7 @@
                     <button type="button" class="btn btn-primary" @click.prevent="createMiscPO">Create Misc Purchase Order</button>
                 </div>
 
-                <div v-else v-if="form.misc_pos && form.misc_pos.length > 0 && ! editing_misc_po && ! creating_misc_po">
+                <div v-else-if="form.misc_pos && form.misc_pos.length > 0 && ! editing_misc_po && ! creating_misc_po">
                     <button type="button" class="btn btn-primary mb-5" @click.prevent="createMiscPO">Create New Misc Purchase Order</button>
 
                     <div v-for="po in form.misc_pos">
@@ -2614,7 +2636,6 @@
                                     <div class="kt-widget__top">
                                         <div class="kt-widget__content">
                                             <div class="kt-widget__head">
-
                                                 <a href="#" class="kt-widget__title">@{{ po.title }}</a>
                                                 <div class="kt-widget__action">
                                                     <button @click.prevent="editPurchaseOrder(po)" type="button" class="btn btn-sm btn-upper" style="background: #edeff6">edit</button>&nbsp;
@@ -2622,64 +2643,64 @@
                                             </div>
 
                                             <div class="kt-widget__info">
-                                                <!--														<div class="kt-widget__progress kt-hidden">-->
-                                                <!--															<div class="kt-widget__text">-->
-                                                <!--																Progress-->
-                                                <!--															</div>-->
-                                                <!--															<div class="progress" style="height: 5px;width: 100%;">-->
-                                                <!--																<div class="progress-bar kt-bg-success" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                                <!--															</div>-->
-                                                <!--															<div class="kt-widget__stats">-->
-                                                <!--																78%-->
-                                                <!--															</div>-->
-                                                <!--														</div>-->
+                                                {{-- <div class="kt-widget__progress kt-hidden">
+                                                    <div class="kt-widget__text">
+                                                        Progress
+                                                    </div>
+                                                    <div class="progress" style="height: 5px;width: 100%;">
+                                                    <div class="progress-bar kt-bg-success" role="progressbar" style="width:    65%aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>-->
+                                                    </div>
+                                                    <div class="kt-widget__stats">
+                                                        78%
+                                                    </div>
+                                                </div> --}}
                                                 <div class="kt-widget__stats d-flex align-items-center flex-fill">
                                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Created
-																</span>
+                                                        <span class="kt-widget__date">
+                                                            Created
+                                                        </span>
                                                         <div class="kt-widget__label">
                                                             <span style="font-weight:400;">@{{ moment.unix( po.created_at ).format( 'YYYY-MM-DD' ) }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Materials In
-																</span>
+                                                        <span class="kt-widget__date">
+                                                            Materials In
+                                                        </span>
                                                         <div class="kt-widget__label">
                                                             <span style="font-weight:400;">@{{ moment.unix( po.materials_in_at ).format( 'YYYY-MM-DD' ) }}</span>
-                                                            {{--                                            <span class="btn btn-label-danger btn-sm btn-bold btn-upper">{{ $project->materials_in_at ? $project->materials_in_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                                            {{-- <span class="btn btn-label-danger btn-sm btn-bold btn-upper">{{ $project->materials_in_at ? $project->materials_in_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                                         </div>
                                                     </div>
                                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	FOB
-																</span>
+                                                        <span class="kt-widget__date">
+                                                            FOB
+                                                        </span>
                                                         <div class="kt-widget__label">
                                                             <span style="font-weight:400;">@{{ moment.unix( po.fob_at ).format( 'YYYY-MM-DD' ) }}</span>
-                                                            {{--                                            <span class="btn btn-label-success btn-sm btn-bold btn-upper">{{ $project->fob_at ? $project->fob_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                                            {{-- <span class="btn btn-label-success btn-sm btn-bold btn-upper">{{ $project->fob_at ? $project->fob_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                                         </div>
                                                     </div>
                                                     <div class="kt-widget__item">
-																<span class="kt-widget__date">
-																	Delivery
-																</span>
+                                                        <span class="kt-widget__date">
+                                                            Delivery
+                                                        </span>
                                                         <div class="kt-widget__label">
                                                             <span style="font-weight:400;">@{{ moment.unix( po.delivery_at ).format( 'YYYY-MM-DD' ) }}</span>
-                                                            {{--                                            <span class="btn btn-label-warning btn-sm btn-bold btn-upper">{{ $project->delivery_at ? $project->delivery_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span>--}}
+                                                            {{-- <span class="btn btn-label-warning btn-sm btn-bold btn-upper">{{ $project->delivery_at ? $project->delivery_at->format( 'jS \o\f F, Y' ) : 'Not Specified' }}</span> --}}
                                                         </div>
                                                     </div>
-                                                    <!--															<div class="kt-widget__item flex-fill">-->
-                                                    <!--																<span class="kt-widget__subtitel">Progress</span>-->
-                                                    <!--																<div class="kt-widget__progress d-flex  align-items-center">-->
-                                                    <!--																	<div class="progress" style="height: 5px;width: 100%;">-->
-                                                    <!--																		<div class="progress-bar kt-bg-success" role="progressbar" style="width: 78%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>-->
-                                                    <!--																	</div>-->
-                                                    <!--																	<span class="kt-widget__stat">-->
-                                                    <!--																		78%-->
-                                                    <!--																	</span>-->
-                                                    <!--																</div>-->
-                                                    <!--															</div>-->
+                                                    {{-- <div class="kt-widget__item flex-fill">
+                                                        <span class="kt-widget__subtitel">Progress</span>
+                                                        <div class="kt-widget__progress d-flex  align-items-center">
+                                                            <div class="progress" style="height: 5px;width: 100%;">
+                                                            <div class="progress-bar kt-bg-success" role="progressbar" style="width:    78%aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>-->
+                                                            </div>
+                                                            <span class="kt-widget__stat">
+                                                                78%
+                                                            </span>
+                                                        </div>
+                                                    </div> --}}
                                                 </div>
                                             </div>
                                         </div>

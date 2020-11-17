@@ -32,10 +32,10 @@ return [
             'activated' => "Activated",
             'forbidden' => "Forbidden",
             'language' => "Language",
-                
+
             //Belongs to many relations
             'roles' => "Roles",
-                
+
         ],
     ],
 
@@ -50,7 +50,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -79,7 +79,7 @@ return [
             'billing_address_zip_code' => "Billing address zip code",
             'billing_address_country' => "Billing address country",
             'notes' => "Notes",
-            
+
         ],
     ],
 
@@ -94,7 +94,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -146,7 +146,7 @@ return [
             'social_media' => "Social media",
             'source' => "Source",
             'referred_by' => "Referred by",
-            
+
         ],
     ],
 
@@ -161,7 +161,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -176,7 +176,8 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+            'csr' => "CSR",
+
         ],
     ],
 
@@ -191,7 +192,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -206,7 +207,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -221,7 +222,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -238,7 +239,7 @@ return [
             'id' => "ID",
             'name' => "Name",
             'guard_name' => "Guard name",
-            
+
         ],
     ],
 
@@ -254,7 +255,7 @@ return [
         'columns' => [
             'id' => "ID",
             'name' => "Name",
-            
+
         ],
     ],
 
@@ -269,7 +270,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -284,7 +285,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -299,7 +300,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -319,7 +320,7 @@ return [
             'body' => "Body",
             'footer' => "Footer",
             'published_at' => "Published at",
-            
+
         ],
     ],
 
@@ -334,7 +335,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -349,7 +350,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -364,7 +365,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -379,7 +380,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -397,7 +398,7 @@ return [
             'name' => "Name",
             'value' => "Value",
             'default' => "Default",
-            
+
         ],
     ],
 
@@ -412,7 +413,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -427,7 +428,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -442,7 +443,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -482,7 +483,7 @@ return [
             'materials_in_at' => "Materials in at",
             'delivery_at' => "Delivery at",
             'approved_at' => "Approved at",
-            
+
         ],
     ],
 
@@ -497,7 +498,7 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
         ],
     ],
 
@@ -512,7 +513,25 @@ return [
 
         'columns' => [
             'id' => "ID",
-            
+
+        ],
+    ],
+
+    'setting' => [
+        'title' => 'Settings',
+
+        'actions' => [
+            'index' => 'Settings',
+            'create' => 'New Setting',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => "ID",
+            'name' => "Name",
+            'value' => "Value",
+            'type' => "Type",
+
         ],
     ],
 

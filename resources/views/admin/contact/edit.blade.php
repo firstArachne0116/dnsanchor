@@ -72,9 +72,9 @@
                                 <div class="kt-wizard-v4__nav-label-title">
                                     Primary Contact(s)
                                 </div>
-{{--                                <div class="kt-wizard-v4__nav-label-desc">--}}
-{{--                                    Contact Information--}}
-{{--                                </div>--}}
+                               {{-- <div class="kt-wizard-v4__nav-label-desc">
+                                   Contact Information
+                               </div> --}}
                             </div>
                         </div>
                     </div>
@@ -87,9 +87,9 @@
                                 <div class="kt-wizard-v4__nav-label-title">
                                     Social Media
                                 </div>
-{{--                                <div class="kt-wizard-v4__nav-label-desc">--}}
-{{--                                    Contact's Social Media--}}
-{{--                                </div>--}}
+                               {{-- <div class="kt-wizard-v4__nav-label-desc">
+                                   Contact's Social Media
+                               </div> --}}
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                     <div class="kt-grid">
                         <div class="kt-grid__item kt-grid__item--fluid kt-wizard-v4__wrapper">
                             <!--begin: Form Wizard Form-->
-{{--                            <form class="kt-form" id="kt_user_add_form" novalidate="novalidate">--}}
+                           {{-- <form class="kt-form" id="kt_user_add_form" novalidate="novalidate"> --}}
 
                                 <contact-form
                                         :action="'{{ $contact->resource_url }}'"
@@ -194,7 +194,7 @@
 
                                 </contact-form>
 
-{{--                            </form>--}}
+                           {{-- </form> --}}
                             <!--end: Form Wizard Form-->
                         </div>
                     </div>

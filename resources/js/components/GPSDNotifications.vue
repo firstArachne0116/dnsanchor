@@ -8,7 +8,7 @@
                 </div>
             </div>
         </div>
-        <a v-for="notification in getNotifications" v-else :href="notification.data.url + '?read=' + notification.id" class="kt-notification__item">
+        <a v-for="(notification, index) in getNotifications" :key="'it_'+index" v-else :href="notification.data.url + '?read=' + notification.id" class="kt-notification__item">
             <div class="kt-notification__item-icon">
                 <i class="flaticon2-line-chart kt-font-success"></i>
             </div>

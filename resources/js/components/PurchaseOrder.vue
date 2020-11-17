@@ -10,31 +10,33 @@
                             <ul class="kt-nav kt-nav--active-bg" id="kt_nav" role="tablist">
                                 <li class="kt-nav__item">
                                     <a href="#main-details" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                        <span class="kt-nav__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                </g>
+                                            </svg>
+                                        </span>
                                         <span class="kt-nav__link-text">Main Details</span>
                                     </a>
                                 </li>
                                 <li class="kt-nav__item kt-nav__item--active">
                                     <a class="kt-nav__link  dropdown-toggle" role="tab" id="kt_nav_link_1" data-toggle="collapse" href="#kt_nav_sub_1" aria-expanded=" false">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect x="0" y="0" width="24" height="24" />
-        <polygon fill="#000000" opacity="0.3" points="12 2 4 19 20 19" />
-        <rect fill="#000000" x="11" y="11" width="2" height="11" rx="1" />
-    </g>
-</svg>						</span>
+                                        <span class="kt-nav__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <polygon fill="#000000" opacity="0.3" points="12 2 4 19 20 19" />
+                                                    <rect fill="#000000" x="11" y="11" width="2" height="11" rx="1" />
+                                                </g>
+                                            </svg>
+                                        </span>
                                         <span class="kt-nav__link-text">Project Type(s)</span>
                                     </a>
                                     <ul class="kt-nav__sub collapse show" id="kt_nav_sub_1" role="tabpanel" aria-labelledby="m_nav_link_1" data-parent="#kt_nav">
-                                        <li v-for="type in types" class="kt-nav__item">
+                                        <li v-for="(type, index) in types" class="kt-nav__item" :key="'type' + index">
                                             <a :href="'#' + type.friendly_name + '-' + type.id" class="kt-nav__link">
                                                 <span class="kt-nav__link-bullet kt-nav__link-bullet--line"><span></span></span>
                                                 <span class="kt-nav__link-text">{{ type.name }}</span>
@@ -44,28 +46,30 @@
                                 </li>
                                 <li class="kt-nav__item">
                                     <a href="#other-information" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                        <span class="kt-nav__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                </g>
+                                            </svg>
+                                        </span>
                                         <span class="kt-nav__link-text">Other Information</span>
                                     </a>
                                 </li>
 
                                 <li class="kt-nav__item">
                                     <a href="#pcq_information" class="kt-nav__link">
-                                          <span class="kt-nav__link-icon">
-										<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polygon points="0 0 24 0 24 24 0 24"></polygon>
-        <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-        <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
-    </g>
-</svg>									</span>
+                                        <span class="kt-nav__link-icon">
+										    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24"></polygon>
+                                                    <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                    <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                </g>
+                                            </svg>
+                                        </span>
                                         <span class="kt-nav__link-text">PCQ Information</span>
                                     </a>
                                 </li>
@@ -161,16 +165,26 @@
                                             </label>
 
                                             <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.assigned_salesperson" :options="sales_people" :multiple="true" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Salesperson" label="name" track-by="name" :preselect-first="false">
-                                                <template slot="selection" slot-scope="{ values, search, isOpen }">
-                    <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
-                        <span v-for="(person, index) in form.assigned_salesperson">
-                            <span>{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
-                        </span>
-                    </span>
+                                                <template slot="selection" slot-scope="{ isOpen }">
+                                                    <span class="multiselect__single" v-if="form.assigned_salesperson && form.assigned_salesperson.length && !isOpen">
+                                                        <span v-for="(person, index) in form.assigned_salesperson" :key="'span'+index">
+                                                            <span>{{person.name}}</span><span v-if="index+1 < form.assigned_salesperson.length">, </span>
+                                                        </span>
+                                                    </span>
                                                 </template>
                                             </multiselect>
                                             <div v-if="errors.has('assigned_salesperson')" class="form-control-feedback form-text" v-cloak>{{ errors.first('assigned_salesperson') }}</div>
                                         </div>
+                                    </div>
+
+                                    <!-- Singular fields -->
+                                    <div class="form-group col-6" :class="{'has-danger': errors.has('csr'), 'has-success': this.fields.csr && this.fields.csr.valid}">
+                                        <label for="csr">
+                                            CSR
+                                        </label>
+
+                                        <input type="text" :readonly="awaitingManagerApproval && ! isManager" v-model="form.csr" class="form-control" :class="{'form-control-danger': errors.has('csr'), 'form-control-success': this.fields.csr && this.fields.csr.valid }" id="csr" name="csr" placeholder="CSR">
+                                        <div v-if="errors.has('csr')" class="form-control-feedback form-text" v-cloak>{{ errors.first('csr') }}</div>
                                     </div>
 
                                     <!-- Singular fields -->
@@ -228,7 +242,7 @@
                     </div>
                     <!-- end::Main Details-->
 
-                    <div v-for="type in types">
+                    <div v-for="(type, index) in types" :key="'type' + index">
                         <!--begin::Portlet-->
                         <div class="kt-portlet" data-ktportlet="true" :id="type.friendly_name + '-' + type.id">
                             <div class="kt-portlet__head">
@@ -240,12 +254,12 @@
                                 <div class="kt-portlet__head-toolbar">
                                     <div class="kt-portlet__head-group">
                                         <a href="#">
-							<span class="kt-switch kt-switch--brand mt-3">
-							<label>
-							<input v-model="form.type" :value="type.friendly_name" type="checkbox" name="">
-							<span></span>
-							</label>
-							</span>
+                                            <span class="kt-switch kt-switch--brand mt-3">
+                                                <label>
+                                                    <input v-model="form.type" :value="type.friendly_name" type="checkbox" name="">
+                                                    <span></span>
+                                                </label>
+                                            </span>
                                         </a>
                                     </div>
                                 </div>
@@ -269,7 +283,7 @@
                                             <!-- Text -->
                                         </div>
 
-                                        <div v-for="field in intertwineProjectType( type )" class="col-6">
+                                        <div v-for="(field, index) in intertwineProjectType( type )" class="col-6" :key="'field' + index">
                                             <div class="form-group">
                                                 <div v-if="field._type === 'spec'">
                                                     <label :for="field.friendly_name">
@@ -286,7 +300,7 @@
 
                                                     <div v-else-if="field.type == 'select'">
                                                         <select :readonly="awaitingManagerApproval && ! isManager" v-model="form.types[type.friendly_name].specs[field.label]" class="form-control" :id="field.friendly_name" name="text" :placeholder="field.label">
-                                                            <option v-for="option in field.options.split('\n')">{{ option }}</option>
+                                                            <option v-for="(option, ind) in field.options.split('\n')" :key="'fi_op' + ind">{{ option }}</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -307,7 +321,7 @@
 
                                                     <div v-else-if="field.type == 'select'">
                                                         <select :readonly="awaitingManagerApproval && ! isManager" v-model="form.types[type.friendly_name].materials[field.label]" class="form-control" :id="field.friendly_name" name="text" :placeholder="field.label">
-                                                            <option :value="option" :selected="index === 0 ? 'selected' : false" v-for="(option,index) in field.options.split('\n')">{{ option }}</option>
+                                                            <option :value="option" :selected="index === 0 ? 'selected' : false" v-for="(option,index) in field.options.split('\n')" :key="'fie_op'+index">{{ option }}</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -498,22 +512,22 @@
                                                         </h3>
                                                         <span class="kt-subheader__separator kt-subheader__separator--v"></span>
                                                         <div class="kt-subheader__group" id="kt_subheader_search">
-											<span class="kt-subheader__desc" id="kt_subheader_total">
-												{{ pagination.state.total }} Total </span>
+                                                            <span class="kt-subheader__desc" id="kt_subheader_total">
+                                                                {{ pagination.state.total }} Total </span>
                                                             <form class="kt-margin-l-20" id="kt_subheader_search_form">
                                                                 <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
                                                                     <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
                                                                     <span class="kt-input-icon__icon kt-input-icon__icon--right">
-														<span>
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="0" y="0" width="24" height="24"></rect>
-																	<path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
-																	<path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
-																</g>
-															</svg>
-														</span>
-													</span>
+                                                                        <span>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                                    <rect x="0" y="0" width="24" height="24"></rect>
+                                                                                    <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                                    <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </span>
+                                                                    </span>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -523,7 +537,6 @@
                                                         <a href="javascript:void(0)" @click.prevent="isEditing = true" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
                                                         <div class="col-sm-auto form-group m-0 p-0">
                                                             <select class="form-control" v-model="pagination.state.per_page">
-
                                                                 <option value="10">10</option>
                                                                 <option value="25">25</option>
                                                                 <option value="100">100</option>
@@ -542,7 +555,8 @@
                                                                             <span>Name</span>
                                                                         </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                            <span>Description</span></th>
+                                                                            <span>Description</span>
+                                                                        </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                             <span>Quantity</span>
                                                                         </th>
@@ -550,12 +564,14 @@
                                                                             <span>Unit Cost</span>
                                                                         </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                            <span>Unit Price</span></th>
+                                                                            <span>Unit Price</span>
+                                                                        </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                             <span>Category</span>
                                                                         </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                            <span>Actions</span></th>
+                                                                            <span>Actions</span>
+                                                                        </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody class="kt-datatable__body">
@@ -582,7 +598,7 @@
                                                                             <a class="btn btn-primary btn-sm text-white" href="#" @click.prevent="save" title="Save" role="button"><i class="fa fa-save"></i> Save</a>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr class="kt-datatable__row" v-for="(item, index) in collection">
+                                                                    <tr class="kt-datatable__row" v-for="(item, index) in collection" :key="'tr'+index">
                                                                         <td class="kt-datatable__cell">{{ item.name }}</td>
                                                                         <td class="kt-datatable__cell">{{ item.description || '-' }}</td>
                                                                         <td class="kt-datatable__cell">{{ item.quantity || '-' }}</td>
@@ -590,19 +606,19 @@
                                                                         <td class="kt-datatable__cell">{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
                                                                         <td class="kt-datatable__cell">{{ item.category || 'Misc' }}</td>
                                                                         <td class="kt-datatable__cell">
-                                            <span style="overflow: visible; position: relative; width: 80px;">
-                                                <div class="dropdown">
-  <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="flaticon-more-1"></i>
-  </a>
+                                                                            <span style="overflow: visible; position: relative; width: 80px;">
+                                                                                <div class="dropdown">
+                                                                                    <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                        <i class="flaticon-more-1"></i>
+                                                                                    </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
-    <a class="dropdown-item" href="#">View</a>
-    <a class="dropdown-item" href="#">View Progress</a>
-  </div>
-</div>
-                                            </span>
+                                                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                                        <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
+                                                                                        <a class="dropdown-item" href="#">View</a>
+                                                                                        <a class="dropdown-item" href="#">View Progress</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -613,7 +629,8 @@
                                                                             <span>-</span>
                                                                         </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                            <span>-</span></th>
+                                                                            <span>-</span>
+                                                                        </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                             <span>-</span>
                                                                         </th>
@@ -627,7 +644,8 @@
                                                                             <span>-</span>
                                                                         </th>
                                                                         <th class="kt-datatable__cell kt-datatable__cell--sort">
-                                                                            <span></span></th>
+                                                                            <span></span>
+                                                                        </th>
                                                                     </tr>
                                                                 </tfoot>
                                                             </table>
@@ -976,11 +994,11 @@
             //                    _this3.templateType = 'JCW';
             //                    break;
             //            }
-            //        } );
+            //        });
 
             let _this = this;
 
-            axios.all( [
+            axios.all([
                 axios.get( '/api/sales-persons' ),
                 axios.get( '/api/contacts' ),
                 axios.get( '/api/orientations' ),
@@ -988,8 +1006,8 @@
                 axios.get( '/api/remittance-info' ),
                 axios.get( '/api/payment-terms' ),
                 axios.get( '/api/vendor-payment-terms' ),
-                axios.get( '/api/vendors' )
-            ] ).then( axios.spread( ( salesResponse, clientResponse, orientationsResponse, vendorNotesResponse, remittanceResponse, paymentTermsResponse, vendorPaymentTermsResponse, vendorResponse ) => {
+                axios.get( '/api/vendors' ),
+            ]).then( axios.spread( ( salesResponse, clientResponse, orientationsResponse, vendorNotesResponse, remittanceResponse, paymentTermsResponse, vendorPaymentTermsResponse, vendorResponse ) => {
                 _this.sales_people = salesResponse.data.data;
                 _this.clients = clientResponse.data.data;
                 _this.orientations = orientationsResponse.data.data;
@@ -1004,7 +1022,7 @@
 
                     this.$modal.show( 'pending-review' );
                 } );
-            } ) );
+            }));
 
             jQuery( '[data-toggle="tooltip"]' ).tooltip();
         },

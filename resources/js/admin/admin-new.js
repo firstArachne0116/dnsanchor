@@ -1,6 +1,7 @@
 import './bootstrap';
 
 import 'vue-multiselect/dist/vue-multiselect.min.css';
+import 'vue2-timepicker/dist/VueTimepicker.css'
 //import jQuery from 'jquery';
 //import tinymce from 'tinymce/tinymce';
 //import 'tinymce/themes/silver';
@@ -52,18 +53,21 @@ import fab from '../components/FAB';
 Vue.use(VeeValidate, {strict: true});
 
 Vue.component( 'multiselect', Multiselect );
-Vue.component('datetime', flatPickr);
-Vue.component('jcc-form', require( '../components/JCCForm' ).default );
-Vue.component('jcc-editor', require( '../components/JCCEditor' ).default );
-Vue.component('purchase-order', require( '../components/PurchaseOrder.vue' ).default );
-Vue.component('fab', fab );
-Vue.component('quick-panel', require( '../components/QuickPanelComponent' ).default );
-Vue.component('datepicker', require( 'vuejs-datepicker' ).default );
+Vue.component( 'datetime', flatPickr );
+Vue.component( 'jcc-form', require( '../components/JCCForm' ).default );
+Vue.component( 'jcc-editor', require( '../components/JCCEditor' ).default );
+Vue.component( 'purchase-order', require( '../components/PurchaseOrder.vue' ).default );
+Vue.component( 'fab', fab );
+Vue.component( 'quick-panel', require( '../components/QuickPanelComponent' ).default );
+Vue.component( 'datepicker', require( 'vuejs-datepicker' ).default );
 Vue.component( 'resource-listing-form-combination', require( '../components/ResourceListingFormCombination' ).default );
 Vue.component( 'editable', require( '../components/EditableComponent' ).default );
 Vue.component( 'gpsd-notifications', require( '../components/GPSDNotifications' ).default );
 Vue.component( 'dashboard', require( '../views/Dashboard' ).default );
+Vue.component( 'timesheet', require( '../views/Timesheet' ).default );
 Vue.component( 'jcc-section', require( '../components/JCC/Section').default );
+Vue.component( 'time-editable', require( '../components/TimeEditable').default );
+Vue.component( 'number-editable', require( '../components/NumberEditable').default );
 
 Vue.use(VModal, { dialog: true });
 Vue.use(VueQuillEditor);

@@ -4,13 +4,20 @@
             <ul role="tablist" class="nav nav-tabs nav-tabs-space-lg nav-tabs-line nav-tabs-bold nav-tabs-line-3x nav-tabs-line-brand">
                 <li class="nav-item">
                     <a @click.prevent="setTab( 'primary_contacts' )" data-toggle="tab" href="#gpsd_overview" role="tab" class="nav-link active">Primary Contact(s)
-                    </a></li>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a @click.prevent="setTab( 'social_media' )" data-toggle="tab" href="#gpsd_rfq" role="tab" class="nav-link ">Social Media
-                    </a></li>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a @click.prevent="setTab( 'alternative_contacts' )" data-toggle="tab" href="#gpsd_pcq" role="tab" class="nav-link">Alternative Contacts
-                    </a></li>
+                    </a>
+                </li>
+                <li v-if="!$parent.is_creating && projectResponse" class="nav-item">
+                    <a @click.prevent="setTab( 'projects' )" data-toggle="tab" href="#gpsd_pcq" role="tab" class="nav-link">Projects
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -547,7 +554,7 @@
                                     <div v-if="errors.has('facebook')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('facebook') }}</div>
                                 </div>
 
-                                <!-- Facebook -->
+                                <!-- Twitter -->
                                 <div class="mt-3 col-6" :class="{'has-danger': errors.has('twitter'), 'has-success': this.fields.twitter && this.fields.twitter.valid}">
                                     <label for="twitter">
                                         {{ trans('admin.vendor.columns.twitter') }}
@@ -867,4 +874,151 @@
         </div>
     </div>
     <!-- end::financial-->
+</div>
+
+<div id="projects" v-if="isCurrentTab( 'projects' )">
+    <!-- begin::company-->
+    <div class="kt-portlet" data-ktportlet="true" id="company">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                    Projects
+                </h3>
+            </div>
+        </div>
+        <div class="kt-portlet__body" v-if="projects.length">
+            <!-- begin::Step 1-->
+
+            <project-listing
+                ref="resource_index"
+                :data="projectResponse"
+                :url="'{{ url('admin/projects') }}'"
+                inline-template>
+                <div class="w-100" v-cloak>
+                    <!--begin::List Resource-->
+                    {{-- <div class="kt-subheader w-100 m-0 p-0 kt-grid__item mb-3" id="kt_subheader">
+                        <div class="kt-subheader__main">
+                            <h3 class="kt-subheader__title">
+                                Projects
+                            </h3>
+                            <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                            <div class="kt-subheader__group" id="kt_subheader_search">
+                                <span class="kt-subheader__desc" id="kt_subheader_total">@{{ pagination.state.total }} Total </span>
+                                <form @submit.prevent="" class="kt-margin-l-20" id="kt_subheader_search_form">
+                                    <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
+                                        <input type="text" class="form-control" v-model="search" @keyup.enter="filter('search', $event.target.value)" placeholder="Search..." id="generalSearch">
+                                        <span class="kt-input-icon__icon kt-input-icon__icon--right">
+                                            <span>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                                        <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                        <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                    </g>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- begin::Pagination -->
+                        <div class="kt-subheader__toolbar col">
+                            <a @click.prevent="switchToCreate" href="#" class="btn btn-label-brand btn-bold mr-3">Create New</a>
+
+                            <div class="col-sm-auto form-group m-0 p-0">
+                                <select class="form-control" v-model="pagination.state.per_page">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- emd::Pagination -->
+                    </div> --}}
+
+                    <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--loaded">
+                        <table class="kt-datatable__table">
+                            <thead class="kt-datatable__head">
+                                <tr class="kt-datatable__row">
+                                    <th is='sortable' :column="'id'" class="kt-datatable__cell kt-datatable__cell--sort"><span>Reference</span></th>
+                                    <th is='sortable' :column="'title'" class="kt-datatable__cell kt-datatable__cell--sort"><span>Project Title</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="kt-datatable__body">
+                                <tr @click.prevent="$parent.viewProjectRecord(item.id)" style="height: 50px;" class="kt-datatable__row" v-for="(item, index) in $parent.projects">
+                                    <td class="kt-datatable__cell">@{{ item.reference }}</td>
+                                    <td class="kt-datatable__cell">
+                                        <svg v-if="item.status === 'AWAITING_MANAGER_APPROVAL'" data-toggle="tooltip" data-title="Pending Review" width="23" viewBox="0 0 48 48">
+                                            <path fill="#FFC107" d="M40,40H8c-0.717,0-1.377-0.383-1.734-1.004c-0.356-0.621-0.354-1.385,0.007-2.004l16-28C22.631,8.378,23.289,8,24,8s1.369,0.378,1.728,0.992l16,28c0.361,0.619,0.363,1.383,0.007,2.004S40.716,40,40,40z" />
+                                            <path fill="#5D4037" d="M22,34.142c0-0.269,0.047-0.515,0.143-0.746c0.094-0.228,0.229-0.426,0.403-0.592c0.171-0.168,0.382-0.299,0.624-0.393c0.244-0.092,0.518-0.141,0.824-0.141c0.306,0,0.582,0.049,0.828,0.141c0.25,0.094,0.461,0.225,0.632,0.393c0.175,0.166,0.31,0.364,0.403,0.592C25.953,33.627,26,33.873,26,34.142c0,0.27-0.047,0.516-0.143,0.74c-0.094,0.225-0.229,0.419-0.403,0.588c-0.171,0.166-0.382,0.296-0.632,0.392C24.576,35.954,24.3,36,23.994,36c-0.307,0-0.58-0.046-0.824-0.139c-0.242-0.096-0.453-0.226-0.624-0.392c-0.175-0.169-0.31-0.363-0.403-0.588C22.047,34.657,22,34.411,22,34.142 M25.48,30h-2.973l-0.421-12H25.9L25.48,30z" />
+                                        </svg> @{{ item.title || '-' }}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        {{-- <div class="kt-datatable__pager kt-datatable--paging-loaded" v-if="pagination.state.total > 0">
+
+                            <div class="kt-datatable__pager-info">
+                                <span class="kt-datatable__pager-detail">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
+                            </div>
+
+                            <pagination inline-template>
+                                <ul class="kt-datatable__pager-nav pagination sizeClass" v-if="pagination.last_page > 1">
+                                    <li v-if="showPrevious()" :class="{ 'disabled' : pagination.current_page <= 1, '': true }">
+                                        <a href="#" v-if="pagination.current_page <= 1" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled">
+                                            <i class="flaticon2-back"></i>
+                                        </a>
+
+                                        <a :title="config.ariaPrevioius" :disabled="pagination.current_page <= 1" v-if="pagination.current_page > 1" :aria-label="config.ariaPrevioius" @click.prevent="changePage(pagination.current_page - 1)" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled">
+                                            <i class="flaticon2-back"></i>
+                                        </a>
+                                    </li>
+
+                                    <li v-for="num in array" :class="{ 'kt-datatable__pager-link--active': num === pagination.current_page }">
+                                        <a href="#" :class="{ 'kt-datatable__pager-link--active': num === pagination.current_page }" @click.prevent="changePage(num)" class="kt-datatable__pager-link">@{{ num }}</a>
+                                    </li>
+
+                                    <li v-if="showNext()" :class="{ 'disabled' : pagination.current_page === pagination.last_page || pagination.last_page === 0, 'page-item': true }">
+                                        <span v-if="pagination.current_page === pagination.last_page || pagination.last_page === 0" class="kt-datatable__pager-link kt-datatable__pager-link--next">
+                                                <i class="flaticon2-next"></i>
+
+                                        </span>
+
+                                        <a href="#" v-if="pagination.current_page < pagination.last_page" :aria-label="config.ariaNext" @click.prevent="changePage(pagination.current_page + 1)" class="page-link">
+                                            <span aria-hidden="true">@{{ config.nextText }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </pagination>
+                        </div> --}}
+                    </div>
+
+                    <div class="no-items-found text-center pt-3 pb-5" v-if="!$parent.projects.length > 0">
+                        <i class="icon-magnifier"></i>
+                        <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
+                        <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
+                        <a class="btn btn-primary btn-spinner mt-3" href="#" @click.prevent="$parent.setTab( 'resource-create' )" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}
+                        </a>
+                    </div>
+                    <!--end::List Resource-->
+
+                </div>
+            </project-listing>
+
+        </div>
+        <div v-else class="kt-portlet__body">
+            <div class="w-100">
+                <center>
+                    <h3>
+                        There is no project related to this contact yet.
+                    </h3>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!-- end::company-->
+
 </div>

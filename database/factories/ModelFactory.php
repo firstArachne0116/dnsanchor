@@ -288,3 +288,24 @@ $factory->define(App\Models\Template::class, function (Faker\Generator $faker) {
     ];
 });
 
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Setting::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'value' => $faker->text(),
+        'type' => $faker->sentence,
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});
+
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\Models\Timesheet::class, function (Faker\Generator $faker) {
+    return [
+        
+        
+    ];
+});
+

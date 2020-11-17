@@ -1,93 +1,27 @@
-@extends('brackets/admin-ui::admin.layout.default')
+@extends('admin.layout.dashboard')
 
-@section('title', trans('admin.setting.actions.index'))
+@section('title', trans('admin.admin-user.actions.edit_profile'))
 
 @section('body')
 
-    <setting-listing
-        :data="{{ $data->toJson() }}"
-        :url="'{{ url('admin/settings') }}'"
-        inline-template>
+    <!--Begin::App-->
+    <div class="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
+        <!--Begin:: App Aside Mobile Toggle-->
+        <button class="kt-app__aside-close" id="kt_user_profile_aside_close">
+            <i class="la la-close"></i>
+        </button>
+        <!--End:: App Aside Mobile Toggle-->
 
-        <div class="row">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">
-                        <i class="fa fa-align-justify"></i> {{ trans('admin.setting.actions.index') }}
-                        <a class="btn btn-primary btn-spinner btn-sm pull-right m-b-0" href="{{ url('admin/settings/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.setting.actions.create') }}</a>
-                    </div>
-                    <div class="card-body" v-cloak>
-                        <form @submit.prevent="">
-                            <div class="row justify-content-md-between">
-                                <div class="col col-lg-7 col-xl-5 form-group">
-                                    <div class="input-group">
-                                        <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
-                                        <span class="input-group-append">
-                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>
-                                        </span>
-                                    </div>
-                                </div>
+    @include( 'admin.layout.setting-sidebar' )
 
-                                <div class="col-sm-auto form-group ">
-                                    <select class="form-control" v-model="pagination.state.per_page">
-                                        
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                        </form>
-
-                        <table class="table table-hover table-listing">
-                            <thead>
-                                <tr>
-                                    <th>Setting</th>
-                                    <th>Value</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(item, index) in collection">
-                                    <td>@{{ item.name }}</td>
-                                    <td>
-                                        <img style="max-width: 70px;" v-bind:src="item.value" v-show="item.name === 'logo'" v-bind:alt="item.name" v-bind:title="item.name">
-                                        <span v-show="item.name !== 'logo'">@{{ item.value }}</span>
-                                    </td>
-                                    <td>
-                                        <div class="row no-gutters">
-                                            <div class="col-auto">
-                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
-                                            </div>
-{{--                                            <form class="col" @submit.prevent="deleteItem(item.resource_url)">--}}
-{{--                                                <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>--}}
-{{--                                            </form>--}}
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="row" v-if="pagination.state.total > 0">
-                            <div class="col-sm">
-                                <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
-                            </div>
-                            <div class="col-sm-auto">
-                                <pagination></pagination>
-                            </div>
-                        </div>
-
-	                    <div class="no-items-found" v-if="!collection.length > 0">
-		                    <i class="icon-magnifier"></i>
-		                    <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
-		                    <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
-                            <a class="btn btn-primary btn-spinner" href="{{ url('admin/settings/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.setting.actions.create') }}</a>
-	                    </div>
-                    </div>
-                </div>
+    <!--Begin:: App Content-->
+        <div class="kt-grid__item kt-grid__item--fluid kt-app__content">
+            <div class="kt-container">
+                <dashboard></dashboard>
             </div>
         </div>
-    </setting-listing>
+        <!--End:: App Content-->
+    </div>
+    <!--End::App-->
 
 @endsection
