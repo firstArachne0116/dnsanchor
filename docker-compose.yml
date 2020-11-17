@@ -1,0 +1,99 @@
+version: '3'
+
+networks:
+  laravel_gpsd:
+
+services:
+  nginx_gpsd:
+    image: nginx:stable-alpine
+    container_name: nginx_gpsd
+    ports:
+      - "80:80"
+      - "443:443"
+      - "6002:6002"
+    volumes:
+      - ./src:/var/www:cached
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:cached
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    depends_on:
+      - php_gpsd
+      - mysql_gpsd
+      - gpsd-horizon
+    networks:
+      - laravel_gpsd
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    networks:
+      - laravel_gpsd
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+
+  gpsd-horizon:
+    build:
+      context: ./laravel-horizon
+      args:
+        - CHANGE_SOURCE=null
+        - PHP_VERSION="7.2"
+        - INSTALL_PGSQL=null
+        - INSTALL_BCMATH="true"
+        - INSTALL_MEMCACHED="true"
+        - INSTALL_SOCKETS="true"
+        - INSTALL_CASSANDRA=null
+        - INSTALL_PHPREDIS="true"
+        - INSTALL_MONGO=null
+        - INSTALL_FFMPEG=null
+        - PUID=1000
+        - PGID=1000
+    volumes:
+      - ./src:/var/www
+      - ./laravel-horizon/supervisord:/etc/supervisord/conf.d
+    depends_on:
+      - php_gpsd
+    networks:
+      - laravel_gpsd
+    ports:
+      - "127.0.0.1:6001:6001"
+
+  redis_gpsd:
+    image: redis:rc-alpine
+    container_name: redis_gpsd
+    restart: unless-stopped
+    ports:
+      - "6384:6379"
+    networks:
+      - laravel_gpsd
+
+  mysql_gpsd:
+    image: mysql:5.7.22
+    container_name: mysql_gpsd
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: gpsd_homestead
+      MYSQL_USER: gpsd_homestead
+      MYSQL_PASSWORD: "~pBK7PtAD6Vz9MNr"
+      MYSQL_ROOT_PASSWORD: "~pBK7PtAD6Vz9MNr"
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql_gpsd
+    networks:
+      - laravel_gpsd
+    volumes:
+      -  ./mysql/restrict-mysql.cnf:/etc/mysql/conf.d/restrict-mysql.cnf
+
+  php_gpsd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_gpsd
+    volumes:
+      - ./src:/var/www:cached
+    ports:
+      - "9000:9000"
+    networks:
+      - laravel_gpsd

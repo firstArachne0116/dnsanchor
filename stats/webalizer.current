@@ -1,0 +1,626 @@
+# Webalizer V2.23-08 Incremental Data - 11/17/2020 00:10:02
+2020 11 17 0 10 2
+13698 3251 37 170 8 21 150230458 12565 147 0 0 0
+1 6 513 1 17
+605 1 1779325 4 605 5 0 0
+576 0 1674406 1 576 1 0 0
+2089 1107 71055323 11 1555 29 0 0
+2790 1613 30006867 7 2393 54 0 0
+944 282 15465379 6 855 16 0 0
+698 85 6173795 12 658 13 0 0
+588 9 1778771 2 586 2 0 0
+609 22 3088847 3 593 4 0 0
+658 57 4793163 6 627 7 0 0
+660 70 2385653 3 639 12 0 0
+584 4 2908991 4 581 4 0 0
+577 0 1811151 2 577 2 0 0
+579 0 1822240 2 579 3 0 0
+579 0 1832943 4 579 4 0 0
+579 0 1822143 4 579 4 0 0
+577 1 1812661 2 577 2 0 0
+6 0 18800 1 6 1 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+392 1 1203636 392 0 0
+444 28 1443333 438 0 0
+384 0 1149102 384 0 0
+384 0 1154420 384 0 0
+909 385 36777377 653 0 0
+448 47 5148030 423 0 0
+439 43 1643898 434 0 0
+844 385 7841239 775 0 0
+567 144 12809651 503 0 0
+648 165 15567094 565 0 0
+627 195 2649959 600 0 0
+659 198 6127695 588 0 0
+679 227 4754280 614 0 0
+577 145 9767444 509 0 0
+384 0 1154598 384 0 0
+411 16 1423399 403 0 0
+543 111 6110184 489 0 0
+804 307 9973329 700 0 0
+897 419 7621490 809 0 0
+657 183 4052969 586 0 0
+669 125 6552871 642 0 0
+553 121 2897398 514 0 0
+394 6 1241645 391 0 0
+385 0 1165417 385 0 0
+11
+0
+0
+3251
+0
+0
+0
+0
+0
+0
+0
+5
+9484
+0
+0
+0
+0
+0
+0
+0
+10
+786
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+151
+0
+0
+0
+0
+0
+# -urls- 
+/admin/projects/107/rfq/print
+0 1 0 65830 0 0 0 0
+/admin/projects/106/lines
+0 6 0 13414 0 0 0 0
+/admin/vendor-payment-terms/1
+0 1 0 2179 0 0 0 0
+/admin/access-logs/189
+0 1 0 1222 0 0 0 0
+/admin/access-logs/151
+0 2 0 3498 0 0 0 0
+/api/vendor-payment-terms
+0 69 0 83366 2 2 0 0
+/admin/projects/79/confirm
+0 1 0 1406 0 0 0 0
+/admin/access-logs/152
+0 1 0 1212 0 0 0 0
+/assets/media/files/pdf.svg
+0 1 0 4503 0 0 0 0
+/admin/projects/79/fcq/pdf
+0 1 0 65813 0 0 0 0
+/admin/access-logs/157
+0 1 0 1393 0 0 0 0
+/admin/payment-terms/3
+0 1 0 1210 0 0 0 0
+/admin/contacts/1
+0 24 0 102457 0 0 0 0
+/api/remittance-info
+0 69 0 101439 7 2 0 0
+/admin/login
+0 76 0 951291 8 5 0 0
+/admin/admin-users/6
+0 1 0 1395 0 0 0 0
+/admin/vendor-payment-terms
+0 1 0 18828 0 0 0 0
+/admin/projects/79/sales_invoice/pdf
+0 1 0 65104 0 0 0 0
+/admin/payment-terms/6
+0 3 0 5962 0 0 0 0
+/admin/access-logs/191
+0 1 0 1214 0 0 0 0
+/js/scripts.bundle.new.js
+0 18 0 1022439 0 0 0 0
+/admin/email-templates/1
+0 5 0 13431 0 0 0 0
+/admin/access-logs/190
+0 1 0 1391 0 0 0 0
+/admin/access-logs/201
+0 1 0 1403 0 0 0 0
+/admin/access-logs/154
+0 2 0 3500 0 0 0 0
+/admin/access-logs/188
+0 1 0 1214 0 0 0 0
+/admin/access-logs/159
+0 1 0 2238 0 0 0 0
+/admin/projects/88
+0 2 0 13956 0 0 0 0
+/admin/vendors/1
+0 2 0 6126 0 0 0 0
+/admin/vendors/2
+0 1 0 4361 0 0 0 0
+/images/vendor/craftable/error.png
+1 2 0 6244 0 0 0 0
+/js/admin-new.js
+0 25 0 23864717 0 0 0 0
+/admin/access-logs/209
+0 1 0 2464 0 0 0 0
+/admin/vendors
+0 11 0 161787 0 0 0 0
+/admin/templates
+0 24 0 447909 0 0 0 0
+/admin/projects/114
+0 1 0 1391 0 0 0 0
+/fonts/vendor/font-awesome/fontawesome-webfont.woff2
+0 23 0 1794602 0 0 0 0
+/admin/access-logs/172
+0 1 0 1216 0 0 0 0
+/admin/profile
+0 32 0 654629 1 0 0 0
+/admin/projects/101
+0 4 0 48537 0 0 0 0
+/admin/projects
+0 147 0 6612828 9 8 0 0
+/admin/access-logs/160
+0 3 0 6160 0 0 0 0
+/admin/access-logs/174
+0 1 0 1216 0 0 0 0
+/admin/access-logs/186
+0 3 0 5971 0 0 0 0
+/admin/projects/79
+0 49 0 772871 6 7 0 0
+/admin/access-logs/161
+0 2 0 3688 0 0 0 0
+/admin/access-logs/194
+0 3 0 6176 0 0 0 0
+/admin/leave-requests
+0 14 0 308678 1 0 0 0
+/js/admin.js
+0 35 0 24368970 0 0 0 0
+/admin/access-logs/173
+0 1 0 1212 0 0 0 0
+/admin/access-logs/156
+0 1 0 2417 0 0 0 0
+/jcc
+0 2 0 30212 0 0 0 0
+/admin/access-logs/171
+0 1 0 1216 0 0 0 0
+/admin/customer-categories
+0 15 0 208124 0 0 0 0
+/plugins/global/fonts/line-awesome/line-awesome.woff2
+0 19 0 869404 0 0 0 0
+/admin/access-logs/177
+0 1 0 1393 0 0 0 0
+/admin/access-logs/178
+0 1 0 1391 0 0 0 0
+/admin/projects/79/edit
+0 1 0 44673 0 0 0 0
+/admin/projects/113
+0 1 0 1387 0 0 0 0
+/admin/contacts/5/edit
+0 1 0 25454 0 0 0 0
+/images/vendor/craftable/envelope.png
+1 27 0 38094 0 0 0 0
+/api/vendor-notes
+0 69 0 76178 9 2 0 0
+/admin/vendor-notes
+0 4 0 75798 0 0 0 0
+/admin/access-logs/169
+0 1 0 2463 0 0 0 0
+/admin/project-types
+0 2 0 38872 0 0 0 0
+/images/logo.png
+1 19 0 117698 0 0 0 0
+/plugins/global/fonts/@fortawesome/fa-solid-900.woff2
+0 19 0 1452663 0 0 0 0
+/api/notifications
+0 446 0 1103657 3 25 0 0
+/favicon.ico
+0 23 0 29033 0 0 0 0
+/admin/payment-terms
+0 13 0 168481 0 0 0 0
+/admin/vendor-payment-terms/2
+0 1 0 2173 0 0 0 0
+/js/plugins.bundle.new.js
+0 18 0 16612941 0 0 0 0
+/admin/access-logs/198
+0 1 0 2474 0 0 0 0
+/admin/projects/110
+0 1 0 1391 0 0 0 0
+/admin/access-logs/148
+0 1 0 1218 0 0 0 0
+/admin/projects/107
+0 11 0 115768 1 0 0 0
+/admin/access-logs/150
+0 1 0 1214 0 0 0 0
+/admin/contacts/5
+0 4 0 22515 0 0 0 0
+/admin/contacts/14
+0 3 0 10615 0 0 0 0
+/admin/access-logs
+0 117 0 1036907 4 2 0 0
+/admin/access-logs/149
+0 1 0 2473 0 0 0 0
+/admin/access-logs/185
+0 2 0 4840 0 0 0 0
+/admin/admin-users
+0 24 0 394868 0 0 0 0
+/admin/projects/98/lines
+0 20 0 61221 1 2 0 0
+/admin/access-logs/202
+0 1 0 2282 0 0 0 0
+/admin/access-logs/187
+0 1 0 2300 0 0 0 0
+/admin/email-templates/create
+0 1 0 18944 0 0 0 0
+/admin/access-logs/195
+0 1 0 1391 0 0 0 0
+/css/todo.css
+0 14 0 78962 0 0 0 0
+/admin/access-logs/86
+0 1 0 2423 0 0 0 0
+/admin/projects/105
+0 1 0 1393 0 0 0 0
+/css/style.css
+0 19 0 2254048 0 0 0 0
+/plugins/custom/fullcalendar/fullcalendar.bundle.css
+0 19 0 206679 0 0 0 0
+/api/user
+0 447 0 613528 2 2 0 0
+/admin/contacts
+0 107 0 2468365 4 0 0 0
+/admin/vendors/3
+0 1 0 1208 0 0 0 0
+/admin/contacts/create
+0 6 0 153604 0 0 0 0
+/admin/projects/89
+0 6 0 63249 0 0 0 0
+/admin/projects/107/lines
+0 18 0 40276 0 1 0 0
+/admin/access-logs/167
+0 1 0 1208 0 0 0 0
+/api/payment-terms
+0 69 0 100302 3 2 0 0
+/css/admin.css
+0 27 0 2117157 0 0 0 0
+/admin/access-logs/192
+0 1 0 1224 0 0 0 0
+/plugins/global/plugins.bundle.css
+0 19 0 1227900 0 0 0 0
+/admin/orientations
+0 2 0 41239 0 0 0 0
+/admin/access-logs/175
+0 1 0 1210 0 0 0 0
+/api/contacts
+0 150 0 1322693 2 6 0 0
+/admin/access-logs/180
+0 1 0 2466 0 0 0 0
+/plugins/global/fonts/flaticon/Flaticon.woff
+0 12 0 559510 0 0 0 0
+/admin/access-logs/165
+0 3 0 11027 0 0 0 0
+/admin/access-logs/204
+0 2 0 3499 0 0 0 0
+/admin/contacts/15
+0 5 0 23937 0 0 0 0
+/admin/payment-terms/5
+0 1 0 1218 0 0 0 0
+/admin/templates/1
+0 17 0 84568 0 0 0 0
+/admin/projects/98
+0 6 0 87837 0 0 0 0
+/admin/projects/109
+0 1 0 1210 0 0 0 0
+/admin/access-logs/168
+0 1 0 1395 0 0 0 0
+/admin/admin-users/create
+0 1 0 19949 0 0 0 0
+/admin/payment-terms/1
+0 1 0 2157 0 0 0 0
+/admin/customer-categories/1
+0 2 0 3916 0 0 0 0
+/admin/access-logs/196
+0 1 0 2290 0 0 0 0
+/api/orientations
+0 69 0 73230 3 1 0 0
+/api/sales-persons
+0 156 0 131765 3 0 0 0
+/admin/projects/create
+0 2 0 90034 1 0 0 0
+/admin/projects/101/lines
+0 12 0 26852 0 2 0 0
+/admin/projects/112
+0 2 0 7916 0 0 0 0
+/admin/vendors/create
+0 1 0 27550 0 0 0 0
+/admin/access-logs/200
+0 1 0 1212 0 0 0 0
+/admin/contacts/13
+0 4 0 8662 0 0 0 0
+/admin/leave-requests/26
+0 2 0 4424 0 1 0 0
+/admin/access-logs/199
+0 1 0 1220 0 0 0 0
+/admin/admin-users/1
+0 1 0 2821 0 0 0 0
+/admin/remittance-infos
+0 1 0 18814 0 0 0 0
+/admin/access-logs/111
+0 1 0 2233 0 0 0 0
+/api/vendor-categories
+0 7 0 5580 0 0 0 0
+/admin/access-logs/97
+0 2 0 4940 0 0 0 0
+/plugins/custom/fullcalendar/fullcalendar.bundle.js
+0 18 0 2366723 0 0 0 0
+/admin/projects/89/fcq-signed
+0 1 0 5169 0 0 0 0
+/admin/templates/2
+0 1 0 1391 0 0 0 0
+/admin/access-logs/162
+0 1 0 1399 0 0 0 0
+/admin/access-logs/164
+0 1 0 1212 0 0 0 0
+/admin/letter-heads
+0 5 0 93977 0 0 0 0
+/admin/access-logs/129
+0 1 0 2431 0 0 0 0
+/admin/access-logs/166
+0 1 0 1210 0 0 0 0
+/admin/projects/112/fcq-signed
+0 1 0 1383 0 0 0 0
+/admin/projects/89/lines
+0 16 0 36116 0 0 0 0
+/admin/projects/108
+0 5 0 47769 0 0 0 0
+/media/1/Axm2WOrTK0m2vsmkeUAQ1lGVpE5Z5hAHykvGuWOC.png
+1 5 0 336155 0 0 0 0
+/api/vendors
+0 69 0 577890 3 14 0 0
+/admin/projects/108/lines
+0 12 0 27061 0 2 0 0
+/admin/projects/88/lines
+0 4 0 8934 0 0 0 0
+/admin/access-logs/203
+0 1 0 1212 0 0 0 0
+/images/vendor/craftable/lock.png
+1 23 0 47866 0 0 0 0
+/plugins/global/fonts/flaticon2/Flaticon2.woff
+0 19 0 578650 0 0 0 0
+/admin
+0 124 0 2301727 4 2 0 0
+/admin/email-templates
+0 8 0 128938 1 0 0 0
+/admin/access-logs/197
+0 1 0 2462 0 0 0 0
+/admin/projects/79/aa/pdf
+0 1 0 65263 0 0 0 0
+/robots.txt
+0 7 0 30907 0 0 0 0
+/admin/projects/106
+0 3 0 23168 0 0 0 0
+/images/vendor/craftable/correct.png
+1 12 0 21825 0 0 0 0
+/admin/admin-users/7
+0 2 0 4274 0 0 0 0
+/admin/projects/107/rfq/pdf
+0 1 0 65767 0 0 0 0
+/admin/customer-categories/2
+0 1 0 1216 0 0 0 0
+/admin/projects/79/lines
+0 120 0 306063 2 14 0 0
+/admin/access-logs/163
+0 2 0 3496 0 0 0 0
+/admin/contacts/9
+0 2 0 2662 0 0 0 0
+/admin/access-logs/170
+0 1 0 1210 0 0 0 0
+/admin/access-logs/193
+0 1 0 1210 0 0 0 0
+/admin/vendor-categories
+0 3 0 56090 0 0 0 0
+# End Of Table - urls
+# -sites- (monthly)
+54.38.188.35
+0 1 0 10853 1 1604670616 0 0
+-
+31.13.191.87
+0 3 1 13219 1 1604220323 0 0
+/admin/login
+80.19.177.242
+0 1 0 10827 1 1604911024 0 0
+-
+167.172.186.32
+0 1 0 10823 1 1604903727 0 0
+-
+95.106.249.53
+0 9 7 1143314 1 1604853398 0 0
+/admin/login
+198.57.179.233
+0 1 0 10823 1 1604408095 0 0
+-
+206.212.248.130
+0 9239 5 28034055 2 1605571802 0 0
+-
+167.88.61.176
+0 49 33 7167536 2 1604569972 0 0
+/admin/login
+192.95.30.65
+0 2 1 18309 1 1604380568 0 0
+-
+82.223.104.73
+0 1 0 10827 1 1604227377 0 0
+-
+162.211.40.133
+0 5 5 1092750 1 1604512929 0 0
+/admin/login
+52.8.185.89
+0 10 4 67907 1 1604569731 0 0
+/admin/login
+52.204.27.85
+0 2 1 35792 1 1604967778 0 0
+/admin/login
+138.246.253.15
+0 6 0 33400 5 1605425892 0 0
+-
+167.172.234.204
+0 1 0 5600 1 1604626697 0 0
+-
+209.107.196.94
+0 996 738 14368804 17 1604607627 0 0
+/admin/access-logs
+104.131.176.148
+0 1 0 5519 1 1604678380 0 0
+-
+213.149.103.132
+0 2 0 21650 2 1605390570 0 0
+-
+34.64.218.102
+0 1 0 10827 1 1605395428 0 0
+-
+51.15.247.217
+0 1 0 5492 1 1605411238 0 0
+-
+68.183.64.176
+0 1 0 10823 1 1605114945 0 0
+-
+188.43.136.32
+0 2465 1779 68182187 64 1604996983 0 0
+/api/vendor-notes
+54.38.253.1
+0 1 0 10823 1 1604223259 0 0
+-
+31.13.191.88
+0 6 2 26364 2 1605531954 0 0
+/admin/login
+104.131.191.111
+0 1 0 5529 1 1604679471 0 0
+-
+51.15.241.250
+0 1 0 5437 1 1605421910 0 0
+-
+46.160.252.160
+0 37 28 3804126 1 1604377589 0 0
+/api/notifications
+104.131.115.199
+0 1 0 5551 1 1604687086 0 0
+-
+157.245.9.62
+0 1 0 5533 1 1604627447 0 0
+-
+50.196.184.54
+0 160 115 9638743 6 1605099148 0 0
+/admin/login
+128.199.165.213
+0 1 0 10849 1 1604398892 0 0
+-
+143.255.58.57
+0 26 22 3700488 1 1604379102 0 0
+/api/user
+193.37.32.176
+0 42 2 465215 2 1604517897 0 0
+/admin/login
+209.107.196.93
+0 593 485 8564924 18 1604668274 0 0
+/api/contacts
+104.131.180.22
+0 1 0 5610 1 1604685714 0 0
+-
+49.36.153.22
+0 26 22 3696696 1 1604377695 0 0
+/api/notifications
+31.13.191.75
+0 3 1 13233 1 1604662535 0 0
+/admin/login
+# End Of Table - sites (monthly)
+# -sites- (daily)
+206.212.248.130
+0 6 0 18800 1 1605571802 0 0
+-
+# End Of Table - sites (daily)
+# -referrers- 
+http://gpsd.dnsanchor.com/
+0 6
+https://www.freelancer.com/projects/laravel/Need-Laravel-Craftable-developer/proposals
+0 1
+https://www.freelancer.com/
+0 28
+https://www.google.com/
+0 1
+- (Direct Request)
+0 9514
+https://www.freelancer.in/dashboard
+0 1
+https://gpsd.dnsanchor.com/
+0 4145
+https://www.freelancer.in/
+0 2
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36
+0 9
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; Trident/7.0; rv:11.0) like Gecko
+0 1
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0
+0 26
+Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/17.0 Firefox/17.0
+0 12
+Mozilla/5.0 (compatible; NetcraftSurveyAgent/1.0; +info@netcraft.com)
+0 6
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+0 37
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+0 874
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 2
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
+0 2
+Mozilla/5.0 (compatible; DashLinkPreviews/5.1;)
+0 6
+Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36
+0 6
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36
+0 3228
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 42
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 Safari/600.3.18
+0 3
+Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0
+0 26
+Webmin
+0 9234
+AHC/2.1
+0 1
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0
+0 11
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36
+0 5
+Mozilla/5.0 (compatible)
+0 2
+Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0
+0 160
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

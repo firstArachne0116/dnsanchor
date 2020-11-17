@@ -1,0 +1,163 @@
+// Variables
+@import "variables";
+
+// Vendor
+@import "vendor/index";
+
+// Your own, project specific styles
+@import "styles/index";
+
+.dropdown-menu {
+  &.notifications-widget {
+    min-width: 450px;
+  }
+}
+
+.app-footer {
+  display: none;
+}
+
+.uk-offcanvas-container .uk-offcanvas-content {
+  z-index: 999999;
+}
+
+.app-header .navbar-nav {
+  margin-top: 0;
+}
+
+.uk-open > .uk-offcanvas-bar {
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, .15);
+}
+
+.multiselect__tags {
+  min-height: 25px !important;
+  font-size: 12px !important;
+  padding: 4px 25px 0 8px !important;
+}
+
+.multiselect__placeholder {
+  margin-bottom: 7px !important;
+}
+
+.multiselect__select {
+  min-height: 25px !important;
+}
+
+.multiselect, .multiselect__input, .multiselect__single {
+  font-size: 12px !important;
+}
+
+.multiselect__select {
+  height: 32px !important;
+}
+
+.multiselect__input, .multiselect__single {
+  min-height: 20px !important;
+  line-height: 20px !important;
+}
+
+/**
+ * Spinner
+ */
+
+// Colors variables
+$primary: #4285F4; // blue
+$success: #34A853; // green
+$danger: #EA4335; // red
+$warning: #FBBC05; // yellow
+
+// Container and shapes dimentions
+$containerDimentions: 60px;
+$shapeDimentions: 20px;
+//shape translate amount
+$amount: 10px;
+
+.spinner {
+  position: relative;
+  width: $containerDimentions;
+  height: $containerDimentions;
+  border-radius: $containerDimentions/2;
+  animation: rotation 1s infinite;
+
+  .shape {
+    position: absolute;
+    width: $shapeDimentions;
+    height: $shapeDimentions;
+    border-radius: $shapeDimentions/2;
+
+    &.shape-1 {
+      left: 0;
+      background-color: $primary;
+    }
+
+    &.shape-2 {
+      right: 0;
+      background-color: $success;
+      animation-delay: 0.3s;
+    }
+
+    &.shape-3 {
+      bottom: 0;
+      background-color: $danger;
+      animation-delay: 0.3s;
+    }
+
+    &.shape-4 {
+      bottom: 0;
+      right: 0;
+      background-color: $warning;
+    }
+  }
+
+  @for $i from 1 through 4 {
+    .shape-#{$i} {
+      animation: shape#{$i} 0.3s infinite alternate;
+    }
+  }
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@mixin shapeTranslate($index, $tx, $ty) {
+  @keyframes shape#{$index} {
+    from {
+      transform: translate(0, 0)
+    }
+    to {
+      transform: translate($tx, $ty)
+    }
+  }
+}
+
+@include shapeTranslate(1, $amount, $amount);
+@include shapeTranslate(2, -$amount, $amount);
+@include shapeTranslate(3, $amount, -$amount);
+@include shapeTranslate(4, -$amount, -$amount);
+
+.col-form-label {
+  padding-top: 0;
+}
+
+.kt-datatable__cell > a {
+  font-weight: 500 !important;
+  color: #595d6e !important;
+}
+
+.fa-sort-amount-desc:after {
+  content: "\f160" !important;
+}
+
+.fa-sort-amount-asc:after {
+  content: "\f885" !important;
+}

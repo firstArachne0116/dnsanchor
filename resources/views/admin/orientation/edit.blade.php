@@ -1,0 +1,43 @@
+@extends('brackets/admin-ui::admin.layout.default')
+
+@section('title', trans('admin.orientation.actions.edit', ['name' => $orientation->id]))
+
+@section('body')
+
+    <div class="container-xl">
+
+        <div class="card">
+
+            <orientation-form
+                :action="'{{ $orientation->resource_url }}'"
+                :data="{{ $orientation->toJson() }}"
+                inline-template>
+            
+                <form class="form-horizontal form-edit" method="post" @submit.prevent="onSubmit" :action="this.action" novalidate>
+
+                    <div class="card-header">
+                        <i class="fa fa-pencil"></i> {{ trans('admin.orientation.actions.edit', ['name' => $orientation->id]) }}
+                    </div>
+
+                    <div class="card-body">
+
+                        @include('admin.orientation.components.form-elements')
+
+                    </div>
+
+                    <div class="card-footer">
+	                    <button type="submit" class="btn btn-primary" :disabled="submiting">
+		                    <i class="fa" :class="submiting ? 'fa-spinner' : 'fa-download'"></i>
+		                    {{ trans('brackets/admin-ui::admin.btn.save') }}
+	                    </button>
+                    </div>
+
+                </form>
+
+        </orientation-form>
+
+    </div>
+
+</div>
+
+@endsection

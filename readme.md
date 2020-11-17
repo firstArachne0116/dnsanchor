@@ -1,0 +1,2 @@
+### Notes
+ - *Tooltip Issues*: caused by Bootstrap conflict in external "Craftable" package. Temporary measure to disable, will revert back on npm update. Responsible file: node_modules/craftable/dist/base-components/Form/BaseForm.js

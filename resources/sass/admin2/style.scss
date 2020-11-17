@@ -1,0 +1,135 @@
+//
+// Main Stylesheet
+//
+@import '~vue-datetime/dist/vue-datetime.css';
+
+.kt-widget2 .kt-widget2__item.kt-widget2__item--light:before {
+  background: #ededed !important;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.kt-datatable__row--donotadd {
+    background: #fafbff !important;
+    border-left: 2px solid red;
+}
+
+.kt-grid-nav > .kt-grid-nav__row > .kt-grid-nav__item {
+    padding: 1rem 0.75rem !important;
+}
+
+.kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__head .kt-datatable__row, .kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__body .kt-datatable__row, .kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__foot .kt-datatable__row {
+  display: table-row !important;
+}
+
+.kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table {
+  display: table !important;
+}
+
+.kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__head, .kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__body, .kt-datatable.kt-datatable--default.kt-datatable--loaded > .kt-datatable__table > .kt-datatable__foot {
+  display: table-row-group !important;
+}
+
+.kt-datatable.kt-datatable--default > .kt-datatable__table,
+.kt-datatable.kt-datatable--default > .kt-datatable__table .kt-datatable__cell {
+  overflow-y: visible !important;
+}
+
+.form-control-feedback {
+    color: red !important;
+}
+
+.nav-item > a[disabled] {
+    cursor: not-allowed !important;
+    pointer-events: initial !important;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block !important;
+}
+
+.dropdown-toggle.btn-sm {
+  &:after {
+    content: unset !important;
+    display: none !important;
+  }
+}
+
+.kt-switch.kt-switch--brand:not(.kt-switch--outline) input:checked ~ span:before {
+  background-color: #d3824a !important;
+}
+
+.kt-switch.kt-switch--brand:not(.kt-switch--outline) input:not(:checked) ~ span:before {
+  background-color: #d9d9d9 !important;
+}
+
+.kt-switch.kt-switch--brand:not(.kt-switch--outline) input:empty ~ span:after {
+  opacity: 1 !important;
+}
+
+tbody .kt-datatable__row:focus,
+tbody .kt-datatable__row:hover {
+  background-color: #faf9ec;
+  cursor: pointer;
+}
+
+.kt-datatable__cell > a {
+  font-weight: 500 !important;
+  color: #595d6e !important;
+}
+
+.fa-sort-amount-desc:after {
+  content: "\f160" !important;
+}
+
+.fa-sort-amount-asc:after {
+  content: "\f885" !important;
+}
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 1: Include global config
+@import "config";
+
+// 2: Include demo config (that overrides the above global config)
+@import "global/layout/config";
+
+// 3: Bootstrap Include
+@import "global/integration/frameworks/bootstrap/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "global/integration/frameworks/bootstrap/bootstrap.scss";
+//@import '@vuikit/theme';
+
+
+// 3: Components include
+@import "global/include";
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 5: Demo Configs
+@import "global/layout/header/config";
+@import "global/layout/aside/config";
+@import "global/layout/footer/config";
+
+
+// 6: Demo Includes
+// Layout
+@import "global/layout/base/base";
+
+@import "global/layout/header/header";
+@import "global/layout/header/base-mobile";
+@import "global/layout/header/menu";
+@import "global/layout/header/topbar";
+@import "global/layout/header/brand";
+
+@import "global/layout/aside/aside";
+@import "global/layout/aside/menu";
+
+@import "global/layout/content/content";
+
+@import "global/layout/footer/footer";
