@@ -40,7 +40,7 @@ class ContactsController extends Controller {
             $searchItem = json_decode($request->input('0'));
             $searchIn = [$searchItem->value];
         }
-        if (strpos($searchItem->name, 'Project') !== false) {
+        if ($request->input('0') && strpos($searchItem->name, 'Project') !== false) {
             $projects = Project::whereNull('deleted_at')->whereNull('approved_at');
             // if ($request->input('search')) {
                 $projects = $projects->where($searchItem->value, 'like', '%'.$request->input('search').'%');
