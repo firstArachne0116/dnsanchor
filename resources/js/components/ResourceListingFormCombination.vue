@@ -229,7 +229,7 @@
 
             fabActionGenerateNewRFQ(id) {
                 if (!id) {
-                    alert(this.contact_id);
+                    // alert(this.contact_id);
                     if (this.contact_id) {
                         // this.$router.push('/admin/projects/create?id=' + this.contact_id);
                         window.location.href = '/admin/projects/create?id=' + this.contact_id;
