@@ -20,8 +20,8 @@ class StoreProject extends FormRequest {
      */
     public function rules() {
         return [
-            'client_id' => 'sometimes|nullable|int|exists:admin_users,id',
-//            'contact_id'              => 'required|int|exists:admin_users,id',
+            'client_id' => 'sometimes|nullable|int|exists:contacts,id',
+            'contact_id'              => 'sometimes|int|exists:contacts,id',
 //            'sales_representative_id' => 'int|exists:admin_users,id',
             'vendor_id' => 'sometimes|nullable|int|exists:vendors,id',
             'vendor_payment_term_id' => 'sometimes|nullable|int|exists:vendor_payment_terms,id',
