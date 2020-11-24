@@ -353,7 +353,7 @@
                                         </div>
                                     </div>
 
-                                   @include( 'admin.project.components.form-elements')
+                                    @include( 'admin.project.components.form-elements')
                                 </div>
 
                                 <fab
