@@ -8,7 +8,6 @@
 /storage/logs
 /storage/framework
 /vendor
-.env
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
