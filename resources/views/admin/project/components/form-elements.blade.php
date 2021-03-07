@@ -177,7 +177,7 @@
                                         {{ trans('admin.project.columns.vendor_payment_term') }}
                                     </label>
 
-                                    <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.vendor_payment_term" label="name" track-by="id" placeholder="Type to search" open-direction="bottom" :options="vendor_payment_term_options" :multiple="false" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="false" :close-on-select="true" :options-limit="300" :limit-text="limitText" :max-height="600" :show-no-results="true" :hide-selected="false" @search-change="vendorPaymentTermLookup"></multiselect>
+                                    <multiselect :disabled="awaitingManagerApproval && ! isManager" v-model="form.vendor_payment_term" label="name" track-by="id" placeholder="Type to search" open-direction="bottom" :options="vendor_payment_term_options" :multiple="false" :searchable="true" :loading="isLoading" :internal-search="false" :clear-on-select="false" :close-on-select="true" :options-limit="300" :limit-text="limitText" :max-height="600" :show-no-results="true" :hide-selected="false" @search-change="vendorLookup"></multiselect>
 
                                     {{--            <input @input="contactLookup" type="text" :readonly="awaitingManagerApproval && ! isManager" v-model="form.client" v-validate="'required'" class="form-control" :class="{'form-control-danger': errors.has('client'), 'form-control-success': this.fields.client && this.fields.client.valid }" id="client" name="client" placeholder="{{ trans('admin.project.columns.client') }}">--}}
                                     <div v-if="errors.has('vendor_payment_term')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('vendor_payment_term') }}</div>
@@ -574,7 +574,7 @@
                     <project-invoice-listing
                         v-if="$parent.active_record && $parent.active_record.hasOwnProperty('resource_url')"
                         :data="form.lines"
-                        :url="$parent.active_record.resource_url + '/lines'"
+                        :url="$parent.active_record.resource_url + '/lines' + (isCurrentTab( ['po'] ) ? '?category=all' : '')"
                         :current-tab="current_tab"
                         :selectable="true"
                         :selectable-sales-lines="false"
@@ -615,7 +615,7 @@
 
                                             </div>
                                             <div class="kt-subheader__toolbar col">
-                                                <a href="javascript:void(0)" @click.prevent="isEditing = true" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
+                                                <a href="javascript:void(0)" @click.prevent="isAdding = true; form = {}" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
                                                 <div class="col-sm-auto form-group m-0 p-0">
                                                     <select class="form-control" v-model="pagination.state.per_page">
 
@@ -651,9 +651,9 @@
                                                                     <span v-if="$parent.isCurrentTab(['sales_invoice'])">Include on invoice?</span>
                                                                     <span v-else></span>
                                                                 </th>
-                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                     <span>Name</span>
-                                                                </th>
+                                                                </th> --}}
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                     <span>Description</span></th>
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
@@ -672,11 +672,10 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody class="kt-datatable__body">
-                                                            <tr class="kt-datatable__row" v-if="isEditing">
+                                                            <tr class="kt-datatable__row" v-if="isAdding">
                                                                 <td v-if="selectable" class="kt-datatable__cell">
                                                                 </td>
-
-                                                                <td class="kt-datatable__cell">
+                                                                <td class="kt-datatable__cell" v-show="false">
                                                                     <input v-model="form.name" type="text" class="form-control form-control-sm" name="name">
                                                                 </td>
                                                                 <td class="kt-datatable__cell">
@@ -699,45 +698,74 @@
                                                                 </td>
                                                             </tr>
                                                             <tr :class="{ 'kt-datatable__row--donotadd' : selectableSalesLines && ! sales_invoice_lines.includes( item.id ) }" class="kt-datatable__row" v-for="(item, index) in collection">
-                                                                <td v-if="selectable" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
-                                                                    <span style="width: 40px;">
-                                                                        <label class="kt-checkbox kt-checkbox--single kt-checkbox--solid">
-                                                                            <input type="checkbox" v-if="selectableSalesLines" v-model="sales_invoice_lines" :value="item.id" :key="item.id">
-                                                                            <input type="checkbox" v-else v-model="applicable_lines" :value="item.id" :key="item.id">&nbsp
-                                                                            <span></span>
-                                                                        </label>
-                                                                    </span>
-                                                                </td>
-                                                                <td class="kt-datatable__cell">@{{ item.name }}</td>
-                                                                <td class="kt-datatable__cell">@{{ item.description || '-' }}</td>
-                                                                <td class="kt-datatable__cell">@{{ item.quantity || '-' }}</td>
-                                                                <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
-                                                                <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
-                                                                <td class="kt-datatable__cell">@{{ item.category || 'Misc' }}</td>
-                                                                <td class="kt-datatable__cell">
-                                                                    <span style="overflow: visible; position: relative; width: 80px;">
-                                                                        <div class="dropdown">
-                                                                            <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                <i class="flaticon-more-1"></i>
-                                                                            </a>
+                                                                <template v-if="index !== editingItem">
+                                                                    <td v-if="selectable" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
+                                                                        <span style="width: 40px;">
+                                                                            <label class="kt-checkbox kt-checkbox--single kt-checkbox--solid">
+                                                                                <input type="checkbox" v-if="selectableSalesLines" v-model="sales_invoice_lines" :value="item.id" :key="item.id">
+                                                                                <input type="checkbox" v-else v-model="applicable_lines" :value="item.id" :key="item.id">&nbsp
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </span>
+                                                                    </td>
+                                                                    {{-- <td class="kt-datatable__cell">@{{ item.name }}</td> --}}
+                                                                    <td class="kt-datatable__cell">@{{ item.description || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ item.quantity || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ item.category || 'Misc' }}</td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <span style="overflow: visible; position: relative; width: 80px;">
+                                                                            <div class="dropdown">
+                                                                                <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                    <i class="flaticon-more-1"></i>
+                                                                                </a>
 
-                                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                                                <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
-                                                                                <a class="dropdown-item" href="#">View</a>
-                                                                                <a class="dropdown-item" href="#">View Progress</a>
+                                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                                    <a class="dropdown-item" @click.prevent="isEditing = true; editingItem = index;">Edit</a>
+                                                                                    <a class="dropdown-item" @click.prevent="isAdding = true; form = item; form.name = '1'; form.quantity += ''; form.unit_cost += ''; form.unit_price += '';" >Duplicate</a>
+                                                                                    <a class="dropdown-item" @click.prevent="deleteItem('lines/'+item.id)">Delete</a>
+                                                                                    {{-- <a class="dropdown-item" href="#">View Progress</a> --}}
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    </span>
-                                                                    {{-- <div class="row no-gutters">
-                                                                        <div class="col-auto">
-                                                                            <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
-                                                                        </div>
-                                                                        <form class="col" @submit.prevent="deleteItem(item.resource_url)">
-                                                                            <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">
-                                                                                <i class="fa fa-trash-o"></i></button>
-                                                                        </form>
-                                                                    </div> --}}
-                                                                </td>
+                                                                        </span>
+                                                                        {{-- <div class="row no-gutters">
+                                                                            <div class="col-auto">
+                                                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                                            </div>
+                                                                            <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                                                                <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">
+                                                                                    <i class="fa fa-trash-o"></i></button>
+                                                                            </form>
+                                                                        </div> --}}
+                                                                    </td>
+                                                                </template>
+                                                                <template v-else>
+                                                                    <td v-if="selectable" class="kt-datatable__cell">
+                                                                    </td>
+
+                                                                    <td class="kt-datatable__cell" v-show="false">
+                                                                        <input v-model="collection[editingItem].name" type="text" class="form-control form-control-sm" name="name">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <textarea v-model="collection[editingItem].description" class="form-control form-control-sm" name="description"></textarea>
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].quantity" type="number" class="form-control form-control-sm" name="quantity">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].unit_cost" class="form-control form-control-sm" name="unit_cost">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].unit_price" class="form-control form-control-sm" name="unit_price">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <multiselect v-model="collection[editingItem].category" :options="categories" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Category" :preselect-first="false"></multiselect>
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <a class="btn btn-primary btn-sm text-white" href="#" @click.prevent="update" title="{{ trans('admin.btn.save') }}" role="button"><i class="fa fa-save"></i> Save</a>
+                                                                    </td>
+                                                                </template>
                                                             </tr>
                                                         </tbody>
 
@@ -769,9 +797,9 @@
                                                                 <th v-if="selectable" class="kt-datatable__cell">
                                                                     <span></span>
                                                                 </th>
-                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                     <span>Name</span>
-                                                                </th>
+                                                                </th> --}}
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                                     <span>Description</span></th>
                                                                 <th class="kt-datatable__cell kt-datatable__cell--sort">
@@ -859,11 +887,10 @@
                             </div>
                         </div>
                     </project-invoice-listing>
-
                 </div>
 
-                <div v-if="isCurrentTab(['sales_invoice'])">
-                    <sales-invoice-listing
+                <div v-show="isCurrentTab(['sales_invoice'])">
+                    <!-- <sales-invoice-listing
                         v-if="$parent.active_record && $parent.active_record.hasOwnProperty('resource_url')"
                         :data="{...form.lines, data: all_line_items}"
                         :url="$parent.active_record.resource_url + '/sales-lines'"
@@ -979,8 +1006,324 @@
                                 </div>
                             </div>
                         </div>
-                    </sales-invoice-listing>
+                    </sales-invoice-listing> -->
 
+                    <project-invoice-listing
+                        v-if="$parent.active_record && $parent.active_record.hasOwnProperty('resource_url')"
+                        :data="form.lines"
+                        :url="$parent.active_record.resource_url + '/lines?category=all'"
+                        :current-tab="current_tab"
+                        :selectable="true"
+                        :selectable-sales-lines="true"
+                        ref="sales_invoice"
+                        inline-template>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="w-100">
+                                    <div class="w-100" v-cloak>
+                                        <div class="kt-subheader w-100 m-0 p-0 kt-grid__item mb-3" id="kt_subheader">
+                                            <div class="kt-subheader__main">
+                                                <h3 class="kt-subheader__title">
+                                                    Line Items
+                                                </h3>
+                                                <span class="kt-subheader__separator kt-subheader__separator--v"></span>
+                                                <div class="kt-subheader__group" id="kt_subheader_search">
+                                                    <span class="kt-subheader__desc" id="kt_subheader_total">
+                                                        @{{ pagination.state.total }} Total
+                                                    </span>
+                                                    <form class="kt-margin-l-20" id="kt_subheader_search_form">
+                                                        <div class="kt-input-icon kt-input-icon--right kt-subheader__search">
+                                                            <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
+                                                            <span class="kt-input-icon__icon kt-input-icon__icon--right">
+                                                                <span>
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                                            <rect x="0" y="0" width="24" height="24"></rect>
+                                                                            <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"></path>
+                                                                            <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero"></path>
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </span>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                            <div class="kt-subheader__toolbar col">
+                                                <a href="javascript:void(0)" @click.prevent="isAdding = true; form = {}" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
+                                                <div class="col-sm-auto form-group m-0 p-0">
+                                                    <select class="form-control" v-model="pagination.state.per_page">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{-- <form @submit.prevent="">
+                                            <div class="row justify-content-md-between">
+                                                <div class="col col-lg-7 col-xl-5 form-group">
+                                                    <div class="input-group">
+                                                        <input class="form-control" placeholder="{{ trans('brackets/admin-ui::admin.placeholder.search') }}" v-model="search" @keyup.enter="filter('search', $event.target.value)" />
+                                                        <span class="input-group-append">
+                                                            <button type="button" class="btn btn-primary" @click="filter('search', search)"><i class="fa fa-search"></i>&nbsp; {{ trans('brackets/admin-ui::admin.btn.search') }}</button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form> --}}
+
+                                        <div class="kt-portlet">
+                                            <div class="kt-portlet__body kt-portlet__body--fit">
+                                                <div class="kt-datatable kt-datatable--default kt-datatable--brand kt-datatable--loaded mb-0">
+                                                    <table class="kt-datatable__table">
+                                                        <thead class="kt-datatable__head">
+                                                            <tr class="kt-datatable__row">
+                                                                <th v-if="selectable" class="kt-datatable__cell">
+                                                                    <span v-if="$parent.isCurrentTab(['sales_invoice'])">Include on invoice?</span>
+                                                                    <span v-else></span>
+                                                                </th>
+                                                                {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Name</span>
+                                                                </th> --}}
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Description</span></th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Quantity</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Unit Cost</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Unit Price</span></th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Category</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Actions</span></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="kt-datatable__body">
+                                                            <tr class="kt-datatable__row" v-if="isAdding">
+                                                                <td v-if="selectable" class="kt-datatable__cell">
+                                                                </td>
+                                                                <td class="kt-datatable__cell" v-show="false">
+                                                                    <input v-model="form.name" type="text" class="form-control form-control-sm" name="name">
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <textarea v-model="form.description" class="form-control form-control-sm" name="description"></textarea>
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <input v-model="form.quantity" type="number" class="form-control form-control-sm" name="quantity">
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <input v-model="form.unit_cost" class="form-control form-control-sm" name="unit_cost">
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <input v-model="form.unit_price" class="form-control form-control-sm" name="unit_price">
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <multiselect v-model="form.category" :options="categories" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Category" :preselect-first="false"></multiselect>
+                                                                </td>
+                                                                <td class="kt-datatable__cell">
+                                                                    <a class="btn btn-primary btn-sm text-white" href="#" @click.prevent="save" title="{{ trans('admin.btn.save') }}" role="button"><i class="fa fa-save"></i> Save</a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr :class="{ 'kt-datatable__row--donotadd' : selectableSalesLines && ! sales_invoice_lines.includes( item.category + '-' + item.id ) }" class="kt-datatable__row" v-for="(item, index) in collection">
+                                                                <template v-if="index !== editingItem">
+                                                                    <td v-if="selectable" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
+                                                                        <span style="width: 40px;">
+                                                                            <label class="kt-checkbox kt-checkbox--single kt-checkbox--solid">
+                                                                                <input type="checkbox" v-if="selectableSalesLines" v-model="sales_invoice_lines" :value="item.category + '-' + item.id" :key="item.id">
+                                                                                <input type="checkbox" v-else v-model="applicable_lines" :value="item.id" :key="item.id">&nbsp
+                                                                                <span></span>
+                                                                            </label>
+                                                                        </span>
+                                                                    </td>
+                                                                    {{-- <td class="kt-datatable__cell">@{{ item.name }}</td> --}}
+                                                                    <td class="kt-datatable__cell">@{{ item.description || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ item.quantity || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_price ).toFixed(2) || '-' }}</td>
+                                                                    <td class="kt-datatable__cell">@{{ item.category || 'Misc' }}</td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <span style="overflow: visible; position: relative; width: 80px;">
+                                                                            <div class="dropdown">
+                                                                                <a class="btn btn-sm btn-clean btn-icon btn-icon-md dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                                    <i class="flaticon-more-1"></i>
+                                                                                </a>
+
+                                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                                    <a class="dropdown-item" @click.prevent="isEditing = true; editingItem = index;">Edit</a>
+                                                                                    <a class="dropdown-item" @click.prevent="isAdding = true; form = item; form.quantity += ''; form.unit_cost += ''; form.unit_price += '';" >Duplicate</a>
+                                                                                    <a class="dropdown-item" @click.prevent="deleteItem('lines/'+item.id)">Delete</a>
+                                                                                    {{-- <a class="dropdown-item" href="#">View Progress</a> --}}
+                                                                                </div>
+                                                                            </div>
+                                                                        </span>
+                                                                        {{-- <div class="row no-gutters">
+                                                                            <div class="col-auto">
+                                                                                <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('brackets/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+                                                                            </div>
+                                                                            <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                                                                <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('brackets/admin-ui::admin.btn.delete') }}">
+                                                                                    <i class="fa fa-trash-o"></i></button>
+                                                                            </form>
+                                                                        </div> --}}
+                                                                    </td>
+                                                                </template>
+                                                                <template v-else>
+                                                                    <td v-if="selectable" class="kt-datatable__cell">
+                                                                    </td>
+
+                                                                    <td class="kt-datatable__cell" v-show="false">
+                                                                        <input v-model="collection[editingItem].name" type="text" class="form-control form-control-sm" name="name">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <textarea v-model="collection[editingItem].description" class="form-control form-control-sm" name="description"></textarea>
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].quantity" type="number" class="form-control form-control-sm" name="quantity">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].unit_cost" class="form-control form-control-sm" name="unit_cost">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <input v-model="collection[editingItem].unit_price" class="form-control form-control-sm" name="unit_price">
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <multiselect v-model="collection[editingItem].category" :options="categories" :close-on-select="true" :clear-on-select="false" :preserve-search="true" placeholder="Category" :preselect-first="false"></multiselect>
+                                                                    </td>
+                                                                    <td class="kt-datatable__cell">
+                                                                        <a class="btn btn-primary btn-sm text-white" href="#" @click.prevent="update" title="{{ trans('admin.btn.save') }}" role="button"><i class="fa fa-save"></i> Save</a>
+                                                                    </td>
+                                                                </template>
+                                                            </tr>
+                                                        </tbody>
+
+                                                        <tfoot v-if="isCurrentTab('fcq')" class="kt-datatable__foot">
+                                                            <tr class="kt-datatable__row">
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>-</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>-</span></th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>-</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span class="">$@{{ total_cost }}</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span class="">$@{{ total_price }}</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>-</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span></span></th>
+                                                            </tr>
+                                                        </tfoot>
+                                                        <tfoot v-else class="kt-datatable__foot">
+                                                            <tr class="kt-datatable__row">
+                                                                <th v-if="selectable" class="kt-datatable__cell">
+                                                                    <span></span>
+                                                                </th>
+                                                                {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Name</span>
+                                                                </th> --}}
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Description</span></th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Quantity</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Unit Cost</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Unit Price</span></th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Category</span>
+                                                                </th>
+                                                                <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                                    <span>Actions</span></th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                    {{-- <div class="kt-datatable__pager kt-datatable--paging-loaded">
+                                                        <ul class="kt-datatable__pager-nav">
+                                                            <li>
+                                                                <a title="First" class="kt-datatable__pager-link kt-datatable__pager-link--first kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-fast-back"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a title="Previous" class="kt-datatable__pager-link kt-datatable__pager-link--prev kt-datatable__pager-link--disabled" data-page="1" disabled="disabled"><i class="flaticon2-back"></i></a>
+                                                            </li>
+                                                            <li style=""></li>
+                                                            <li style="display: none;">
+                                                                <input type="text" class="kt-pager-input form-control" title="Page number">
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number kt-datatable__pager-link--active" data-page="1" title="1">1</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="2" title="2">2</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="3" title="3">3</a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="kt-datatable__pager-link kt-datatable__pager-link-number" data-page="4" title="4">4</a>
+                                                            </li>
+                                                            <li style=""></li>
+                                                            <li>
+                                                                <a title="Next" class="kt-datatable__pager-link kt-datatable__pager-link--next" data-page="2"><i class="flaticon2-next"></i></a>
+                                                            </li>
+                                                            <li>
+                                                                <a title="Last" class="kt-datatable__pager-link kt-datatable__pager-link--last" data-page="4"><i class="flaticon2-fast-next"></i></a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="kt-datatable__pager-info">
+                                                            <div class="dropdown bootstrap-select kt-datatable__pager-size dropup" style="width: 60px;">
+                                                                <select class="selectpicker kt-datatable__pager-size" title="Select page size" data-width="60px" data-selected="10" tabindex="-98">
+                                                                    <option selected value="10">10</option>
+                                                                    <option value="20">20</option>
+                                                                    <option value="30">30</option>
+                                                                    <option value="50">50</option>
+                                                                    <option value="100">100</option>
+                                                                </select></div>
+                                                            <span class="kt-datatable__pager-detail">Showing 1 - 10 of 40</span>
+                                                        </div>
+                                                    </div> --}}
+                                                </div>
+
+                                                {{-- <div class="row" v-if="pagination.state.total > 0">
+                                                    <div class="col-sm">
+                                                        <span class="pagination-caption">{{ trans('brackets/admin-ui::admin.pagination.overview') }}</span>
+                                                    </div>
+                                                    <div class="col-sm-auto">
+                                                        <pagination></pagination>
+                                                    </div>
+                                                </div>
+
+                                                <div class="no-items-found" v-if="!collection.length > 0">
+                                                    <i class="icon-magnifier"></i>
+                                                    <h3>{{ trans('brackets/admin-ui::admin.index.no_items') }}</h3>
+                                                    <p>{{ trans('brackets/admin-ui::admin.index.try_changing_items') }}</p>
+                                                    <a class="btn btn-primary btn-spinner" href="{{ url('admin/projects/create') }}" role="button"><i class="fa fa-plus"></i>&nbsp; {{ trans('admin.project.actions.create') }}
+                                                    </a>
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </project-invoice-listing>
                 </div>
 
             </div>
@@ -2116,9 +2459,9 @@
                         <table class="kt-datatable__table">
                             <thead class="kt-datatable__head">
                                 <tr class="kt-datatable__row">
-                                    <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                    {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
                                         <span>Name</span>
-                                    </th>
+                                    </th> --}}
                                     <th class="kt-datatable__cell kt-datatable__cell--sort">
                                         <span>Description</span></th>
                                     <th class="kt-datatable__cell kt-datatable__cell--sort">
@@ -2135,7 +2478,7 @@
                             </thead>
                             <tbody class="kt-datatable__body">
                                 <tr class="kt-datatable__row" v-for="(item, index) in category">
-                                    <td class="kt-datatable__cell">@{{ item.name }}</td>
+                                    {{-- <td class="kt-datatable__cell">@{{ item.name }}</td> --}}
                                     <td class="kt-datatable__cell">@{{ item.description || '-' }}</td>
                                     <td class="kt-datatable__cell">@{{ item.quantity || '-' }}</td>
                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
@@ -2149,6 +2492,7 @@
 
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <a class="dropdown-item" :href="item.resource_url + '/edit'">Edit</a>
+                                                    <a class="dropdown-item" href="#">Duplicate</a>
                                                     <a class="dropdown-item" href="#">View</a>
                                                     <a class="dropdown-item" href="#">View Progress</a>
                                                 </div>
@@ -2160,9 +2504,9 @@
 
                             <tfoot class="kt-datatable__foot">
                                 <tr class="kt-datatable__row">
-                                    <td class="kt-datatable__cell kt-datatable__cell--sort">
+                                    {{-- <td class="kt-datatable__cell kt-datatable__cell--sort">
                                         <span>Name</span>
-                                    </td>
+                                    </td> --}}
                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
                                         <span>Description</span>
                                     </td>
@@ -2259,7 +2603,7 @@
 
                                 </div>
                                 <div class="kt-subheader__toolbar col">
-                                    <a href="javascript:void(0)" @click.prevent="() => {isEditing = true; form.category = 'AA Change Orders'}" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
+                                    <a href="javascript:void(0)" @click.prevent="() => {isAdding = true; form.category = 'AA Change Orders'}" class="btn btn-label-brand btn-bold mr-5">Add Item</a>
                                     <div class="col-sm-auto form-group m-0 p-0">
                                         <select class="form-control" v-model="pagination.state.per_page">
 
@@ -2294,9 +2638,9 @@
                                                     <th v-if="selectable" class="kt-datatable__cell">
                                                         <span></span>
                                                     </th>
-                                                    <th class="kt-datatable__cell kt-datatable__cell--sort">
+                                                    {{-- <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                         <span>Name</span>
-                                                    </th>
+                                                    </th> --}}
                                                     <th class="kt-datatable__cell kt-datatable__cell--sort">
                                                         <span>Description</span></th>
                                                     <th class="kt-datatable__cell kt-datatable__cell--sort">
@@ -2312,13 +2656,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="kt-datatable__body">
-                                                <tr class="kt-datatable__row" v-if="isEditing">
+                                                <tr class="kt-datatable__row" v-if="isAdding">
                                                     <td v-if="selectable" class="kt-datatable__cell">
                                                     </td>
 
-                                                    <td class="kt-datatable__cell">
+                                                    {{-- <td class="kt-datatable__cell">
                                                         <input v-model="form.name" type="text" class="form-control form-control-sm" name="name">
-                                                    </td>
+                                                    </td> --}}
                                                     <td class="kt-datatable__cell">
                                                         <textarea v-model="form.description" class="form-control form-control-sm" name="description"></textarea>
                                                     </td>
@@ -2339,7 +2683,7 @@
                                                     <td v-if="selectable" class="kt-datatable__cell--center kt-datatable__cell kt-datatable__cell--check">
                                                         <span style="width: 40px;"><label class="kt-checkbox kt-checkbox--single kt-checkbox--solid"><input type="checkbox" v-model="applicable_lines" :value="item.id" :key="item.id">&nbsp;<span></span></label></span>
                                                     </td>
-                                                    <td class="kt-datatable__cell">@{{ item.name }}</td>
+                                                    {{-- <td class="kt-datatable__cell">@{{ item.name }}</td> --}}
                                                     <td class="kt-datatable__cell">@{{ item.description || '-' }}</td>
                                                     <td class="kt-datatable__cell">@{{ item.quantity || '-' }}</td>
                                                     <td class="kt-datatable__cell">@{{ '$' + parseFloat( item.unit_cost ).toFixed(2) || '-' }}</td>
@@ -2400,9 +2744,9 @@
                                                     <td v-if="selectable" class="kt-datatable__cell">
                                                         <span></span>
                                                     </td>
-                                                    <td class="kt-datatable__cell kt-datatable__cell--sort">
+                                                    {{-- <td class="kt-datatable__cell kt-datatable__cell--sort">
                                                         <span>Name</span>
-                                                    </td>
+                                                    </td> --}}
                                                     <td class="kt-datatable__cell kt-datatable__cell--sort">
                                                         <span>Description</span></td>
                                                     <td class="kt-datatable__cell kt-datatable__cell--sort">

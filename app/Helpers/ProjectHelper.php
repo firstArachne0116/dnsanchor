@@ -72,6 +72,7 @@ function create_pdf_from_project($project_id, $type, $save_only = false, $file_n
                       ->latestVersion()
                       ->first();
 
+    error_reporting(E_ALL ^ E_DEPRECATED);
     if ( ! $project || ! $project->count() === 0 ) {
         // no drafts exist
         $project = Project::findOrFail( $project_id );

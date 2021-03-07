@@ -90,7 +90,7 @@
                                 </span>
                             </span>
                         </a>
-                        <a href="#" class="kt-widget__item" data-toggle="kt-tooltip" title="Coming soon..." data-placement="right">
+                        {{-- <a href="#" class="kt-widget__item" data-toggle="kt-tooltip" title="Coming soon..." data-placement="right">
                             <span class="kt-widget__section">
                                 <span class="kt-widget__icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -122,7 +122,7 @@
                                 <span href="#" class="kt-widget__desc">Performance Reports</span>
                             </span>
                             <span class="kt-badge kt-badge--unified-brand kt-badge--inline kt-badge--bolder">new</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>

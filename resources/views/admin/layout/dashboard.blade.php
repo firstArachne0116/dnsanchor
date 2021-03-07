@@ -512,7 +512,7 @@
                                                 <span class="kt-badge kt-badge--username kt-badge--unified-brand kt-badge--lg kt-badge--circle kt-badge--bold">JN</span>
                                             </div>
                                             <div class="kt-user-card__name">
-                                                Jarrod Noonan
+                                                @{{ getUser.first_name + " " + getUser.last_name }}
                                             </div>
                                         </div>
 
@@ -533,7 +533,7 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                            <a href="custom/apps/user/profile-2.html" class="kt-notification__item">
+                                            {{-- <a href="custom/apps/user/profile-2.html" class="kt-notification__item">
                                                 <div class="kt-notification__item-icon">
                                                     <i class="flaticon2-rocket-1 kt-font-danger"></i>
                                                 </div>
@@ -558,7 +558,7 @@
                                                         latest tasks and projects
                                                     </div>
                                                 </div>
-                                            </a>
+                                            </a> --}}
                                             {{-- <a href="custom/apps/user/profile-1/overview.html" class="kt-notification__item">
                                                 <div class="kt-notification__item-icon">
                                                     <i class="flaticon2-cardiogram kt-font-warning"></i>

@@ -26,7 +26,7 @@ class StorePurchaseOrderInvoiceLine extends FormRequest
         return [
             'project_id'  => 'required|sometimes|integer',
             'purchase_order_id'  => 'required|sometimes|integer',
-            'name'        => 'required|string|sometimes',
+            // 'name'        => 'required|string|sometimes',
             'description' => 'required|string|sometimes',
             'quantity'    => 'required|string|sometimes',
             'unit_cost'   => 'required|string|sometimes',

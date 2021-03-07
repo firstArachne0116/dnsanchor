@@ -229,6 +229,7 @@ Route::get( '/admin/projects/{id}/{type}/email', 'Admin\PDFController@create' );
 /* Auto-generated admin routes */
 Route::middleware( [ 'auth:' . config( 'admin-auth.defaults.guard' ), 'admin' ] )->group( function () {
     Route::get( '/admin/projects/{project}/lines', 'Admin\ProjectInvoiceLinesController@index' );
+    Route::get( '/admin/projects/{project}/lines/{line}/edit', 'Admin\ProjectInvoiceLinesController@index' );
     Route::post( '/admin/projects/{project}/lines', 'Admin\ProjectInvoiceLinesController@store' );
     Route::post( '/admin/projects/{project}/lines/{line}', 'Admin\ProjectInvoiceLinesController@update' )->name( 'admin/project-invoice-lines/update' );
     Route::delete( '/admin/projects/{project}/lines/{line}', 'Admin\ProjectInvoiceLinesController@destroy' )->name( 'admin/project-invoice-lines/destroy' );

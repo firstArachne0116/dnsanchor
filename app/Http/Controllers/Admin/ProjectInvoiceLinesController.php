@@ -129,16 +129,25 @@ class ProjectInvoiceLinesController extends Controller
      *
      * @return Response|array
      */
-    public function update( UpdatePurchaseOrderInvoiceLine $request, ProjectInvoiceLine $projectInvoiceLine)
+    public function update( $project_id, $projectInvoiceLineID, StorePurchaseOrderInvoiceLine $request )
     {
         // Sanitize input
         $sanitized = $request->validated();
 
         // Update changed values ProjectInvoiceLine
-        $projectInvoiceLine->update($sanitized);
+        // $projectInvoiceLine->update($sanitized);
+        // $projectInvoiceLine->save();
+
+        ProjectInvoiceLine::where('id', '=', $projectInvoiceLineID)->update($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('admin/project-invoice-lines'), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
+            return [
+                'redirect' => url('admin/project-invoice-lines'),
+                'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
+                // 'origin' => $projectInvoiceLine->toArray(),
+                'update' => $sanitized,
+                'project_id' => $project_id,
+            ];
         }
 
         return redirect('admin/project-invoice-lines');

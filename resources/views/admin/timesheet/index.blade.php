@@ -87,7 +87,7 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody class="kt-datatable__body">
-                                                                <tr class="kt-datatable__row" v-for="(item, index) in collection" @click.prevent="$parent.userId = item.id; switchToCreate(); $parent.is_viewing = true;">
+                                                                <tr class="kt-datatable__row" v-for="(item, index) in collection" @click.prevent="$parent.userId = item.id; switchToCreate(); $parent.is_viewing = false; $parent.is_editing = true;">
                                                                     <td class="kt-datatable__cell">
                                                                         <span>@{{ item.id }}</span>
                                                                     </td>
